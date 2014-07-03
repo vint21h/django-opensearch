@@ -3,6 +3,6 @@
     {% block contact %}<Contact>{{ contact_email }}</Contact>{% endblock %}
     {% block short_name %}<ShortName>{% trans short_name %}</ShortName>{% endblock %}
     {% block description %}<Description>{% trans description %}</Description>{% endblock %}
-    {% block image %}<Image width="{{ favicon_width }}" height="{{ favicon_height }}" type="{{ favicon_type }}">{% static FAVICON_FILE %}</Image>{% endblock %}
+    {% block image %}<Image width="{{ favicon_width }}" height="{{ favicon_height }}" type="{{ favicon_type }}">{% static favicon_file %}</Image>{% endblock %}
     {% block url %}<Url type="text/html" template="{{ url }}"/>{% endblock %}
 </OpenSearchDescription>
