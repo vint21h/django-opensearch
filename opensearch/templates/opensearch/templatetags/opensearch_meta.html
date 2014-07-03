@@ -1,0 +1,8 @@
+{# django-opensearch #}
+{# opensearch/templates/opensearch/templatetags/opensearch_meta.html #}
+
+{% load i18n %}
+
+{% block search %}
+    <link rel="search" type="application/opensearchdescription+xml" title="{% trans DESCRIPTION %}" href="{% url "opensearch" %}" />
+{% endblock %}
