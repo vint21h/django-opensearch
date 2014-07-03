@@ -34,6 +34,7 @@ Add ``'opensearch'`` to your urls definitions.
         url(r'^opensearch/', include('opensearch.urls')),
 
         ...,
+
     )
 
 Load ``'opensearch_tags'`` to your base template and place opensearch rel meta tag to <head> html tag by calling ``{% opensearch_meta %}``.
