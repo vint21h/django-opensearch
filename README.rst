@@ -78,4 +78,3 @@ Contacts
 **Author**: Alexei Andrushievich <vint21h@vint21h.pp.ua>
 
 For other authors list see AUTHORS file.
-For other authors list see AUTHORS file.
