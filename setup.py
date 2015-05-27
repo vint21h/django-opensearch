@@ -8,14 +8,14 @@ from __future__ import unicode_literals
 from setuptools import setup, find_packages
 
 # metadata
-VERSION = (0, 2, 1)
-__version__ = '.'.join(map(str, VERSION))
+VERSION = (0, 2, 2)
+__version__ = ".".join(map(str, VERSION))
 
 setup(
     name="django-opensearch",
     version=__version__,
     packages=find_packages(),
-    install_requires=['Django', ],
+    install_requires=["Django", ],
     author="Alexei Andrushievich",
     author_email="vint21h@vint21h.pp.ua",
     description="Handle opensearch.xml",

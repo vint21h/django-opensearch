@@ -6,12 +6,12 @@
 from __future__ import unicode_literals
 
 __all__ = [
-    'models',
-    'views',
-    'url',
-    'templatetags',
-    'apps',
-    'default_app_config',
+    "models",
+    "views",
+    "url",
+    "templatetags",
+    "apps",
+    "default_app_config",
 ]
 
-default_app_config = 'opensearch.apps.OpensearchConfig'
+default_app_config = "opensearch.apps.OpensearchConfig"

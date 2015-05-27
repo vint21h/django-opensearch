@@ -7,7 +7,7 @@ from __future__ import unicode_literals
 
 from django.apps import AppConfig
 
-__all__ = ['OpensearchConfig', ]
+__all__ = ["OpensearchConfig", ]
 
 
 class OpensearchConfig(AppConfig):

@@ -5,4 +5,4 @@
 
 from __future__ import unicode_literals
 
-__all__ = ['opensearch_tags', ]
+__all__ = ["opensearch_tags", ]

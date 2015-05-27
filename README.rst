@@ -15,40 +15,40 @@ Installation
 
 Configuration
 -------------
-Add ``'opensearch'`` to ``settings.INSTALLED_APPS``.
+Add ``"opensearch"`` to ``settings.INSTALLED_APPS``.
 
     INSTALLED_APPS = (
         ...,
 
-        'opensearch',
+        "opensearch",
 
         ...,
 
     )
 
-Add ``'opensearch'`` to your urls definitions.
+Add ``"opensearch"`` to your urls definitions.
 
-    urlpatterns = patterns('',
+    urlpatterns = patterns("",
         ...,
 
-        url(r'^opensearch/', include('opensearch.urls')),
+        url(r"^opensearch/", include("opensearch.urls")),
 
         ...,
 
     )
 
-Load ``'opensearch_tags'`` to your base template and place opensearch rel meta tag to <head> html tag by calling ``{% opensearch_meta %}``.
+Load ``"opensearch_tags"`` to your base template and place opensearch rel meta tag to <head> html tag by calling ``{% opensearch_meta %}``.
 
 Opensearch settings
 -------------------
 ``OPENSEARCH_CONTACT_EMAIL``
-    Contains an email address at which the maintainer of the description document can be reached. Defaults to ``u''``.
+    Contains an email address at which the maintainer of the description document can be reached. Defaults to ``u""``.
 
 ``OPENSEARCH_SHORT_NAME``
-    Contains a brief human-readable title that identifies this search engine. Defaults to ``u''``.
+    Contains a brief human-readable title that identifies this search engine. Defaults to ``u""``.
 
 ``OPENSEARCH_DESCRIPTION``
-    Contains a human-readable text description of the search engine. Defaults to ``u''``.
+    Contains a human-readable text description of the search engine. Defaults to ``u""``.
 
 ``OPENSEARCH_FAVICON_WIDTH``
     Contains width of an image that can be used in association with this search content. Defaults to ``16``.
@@ -57,13 +57,13 @@ Opensearch settings
     Contains height of an image that can be used in association with this search content. Defaults to ``16``.
 
 ``OPENSEARCH_FAVICON_TYPE``
-    Contains mimetype of an image that can be used in association with this search content. Defaults to ``u'image/x-icon'``.
+    Contains mimetype of an image that can be used in association with this search content. Defaults to ``u"image/x-icon"``.
 
 ``OPENSEARCH_FAVICON_FILE``
-    Contains a URL that identifies the location of an image that can be used in association with this search content. Defaults to ``u'favicon.ico'``.
+    Contains a URL that identifies the location of an image that can be used in association with this search content. Defaults to ``u"favicon.ico"``.
 
 ``OPENSEARCH_SEARCH_URL``
-    Contains a django URL name to search content. Defaults to ``u'search'``.
+    Contains a django URL name to search content. Defaults to ``u"search"``.
 
 
 Licensing
