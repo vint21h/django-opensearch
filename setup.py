@@ -4,10 +4,11 @@
 # django-opensearch
 # setup.py
 
+from __future__ import unicode_literals
 from setuptools import setup, find_packages
 
 # metadata
-VERSION = (0, 1, 2)
+VERSION = (0, 2, 0)
 __version__ = '.'.join(map(str, VERSION))
 
 setup(
@@ -29,6 +30,11 @@ setup(
         "Operating System :: Unix",
         "Programming Language :: Python :: 2.6",
         "Programming Language :: Python :: 2.7",
+        "Programming Language :: Python :: 3",
         "Topic :: Utilities",
+        "Framework :: Django :: 1.5",
+        "Framework :: Django :: 1.6",
+        "Framework :: Django :: 1.7",
+        "Framework :: Django :: 1.8",
     ]
 )

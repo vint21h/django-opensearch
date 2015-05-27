@@ -1,4 +1,8 @@
+# django-opensearch
+# MANIFEST.in
+
 include README.rst
 include COPYING
+include AUTHORS
 include opensearch/templates/opensearch/opensearch.xml
 include opensearch/templates/opensearch/templatetags/opensearch_meta.html

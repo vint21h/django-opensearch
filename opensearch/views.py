@@ -3,6 +3,8 @@
 # django-opensearch
 # opensearch/views.py
 
+from __future__ import unicode_literals
+
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.core.urlresolvers import reverse
@@ -24,6 +26,6 @@ def opensearch(request):
     favicon_height = settings.FAVICON_HEIGHT
     favicon_type = settings.FAVICON_TYPE
     favicon_file = settings.FAVICON_FILE
-    url = u'%s?q={searchTerms}' % request.build_absolute_uri(reverse(settings.SEARCH_URL))
+    url = '{url}?q={{searchTerms}}'.format(url=request.build_absolute_uri(reverse(settings.SEARCH_URL)))
 
     return render_to_response('opensearch/opensearch.xml', locals(), context_instance=RequestContext(request), content_type="application/opensearchdescription+xml")

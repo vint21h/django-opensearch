@@ -76,3 +76,6 @@ Contacts
 **Project Website**: https://github.com/vint21h/django-opensearch
 
 **Author**: Alexei Andrushievich <vint21h@vint21h.pp.ua>
+
+For other authors list see AUTHORS file.
+For other authors list see AUTHORS file.
