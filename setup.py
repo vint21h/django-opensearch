@@ -8,7 +8,7 @@ from __future__ import unicode_literals
 from setuptools import setup, find_packages
 
 # metadata
-VERSION = (0, 2, 2)
+VERSION = (0, 2, 3)
 __version__ = ".".join(map(str, VERSION))
 
 setup(
@@ -21,7 +21,7 @@ setup(
     description="Handle opensearch.xml",
     license="GPLv3 or later",
     url="https://github.com/vint21h/django-opensearch",
-    download_url="https://github.com/vint21h/django-opensearch/archive/%s.tar.gz" % __version__,
+    download_url="https://github.com/vint21h/django-opensearch/archive/{version}.tar.gz".format(version=__version__),
     zip_safe=False,
     include_package_data=True,
     classifiers=[
