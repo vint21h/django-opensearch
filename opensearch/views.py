@@ -27,5 +27,6 @@ def opensearch(request):
     favicon_type = settings.FAVICON_TYPE
     favicon_file = settings.FAVICON_FILE
     url = "{url}?q={{searchTerms}}".format(url=request.build_absolute_uri(reverse(settings.SEARCH_URL)))
+    input_encoding = settings.INPUT_ENCODING.upper()
 
     return render_to_response("opensearch/opensearch.xml", locals(), context_instance=RequestContext(request), content_type="application/opensearchdescription+xml")

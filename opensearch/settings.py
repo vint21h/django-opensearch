@@ -16,6 +16,7 @@ __all__ = [
     "FAVICON_TYPE",
     "FAVICON_FILE",
     "SEARCH_URL",
+    "INPUT_ENCODING",
 ]
 
 
@@ -27,3 +28,4 @@ FAVICON_HEIGHT = getattr(settings, "OPENSEARCH_FAVICON_HEIGHT", 16)
 FAVICON_TYPE = getattr(settings, "OPENSEARCH_FAVICON_TYPE", "image/x-icon")
 FAVICON_FILE = getattr(settings, "OPENSEARCH_FAVICON_FILE", "favicon.ico")
 SEARCH_URL = getattr(settings, "OPENSEARCH_SEARCH_URL", "search")
+INPUT_ENCODING = getattr(settings, "OPENSEARCH_INPUT_ENCODING", "UTF-8")
