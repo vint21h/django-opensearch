@@ -5,9 +5,11 @@
 
 from __future__ import unicode_literals
 
-from django.conf.urls import patterns, url
+from django.conf.urls import url
+from opensearch.views import opensearch
 
-# opesearch urls
-urlpatterns = patterns("opensearch.views",
-    url(r"^opensearch\.xml$", "opensearch", name="opensearch"),  # opensearch
-)
+# opensearch urls
+
+urlpatterns = [
+    url(r"^opensearch\.xml$", opensearch, name="opensearch"),  # opensearch
+]

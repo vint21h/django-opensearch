@@ -5,5 +5,5 @@
     {% block description %}<Description>{% trans description %}</Description>{% endblock %}
     {% block image %}<Image width="{{ favicon_width }}" height="{{ favicon_height }}" type="{{ favicon_type }}">{% static favicon_file %}</Image>{% endblock %}
     {% block url %}<Url type="text/html" template="{{ url }}"/>{% endblock %}
-    {% block input_encoding %} <InputEncoding>{{ input_encoding }}</InputEncoding>{% endblock %}
+    {% block input_encoding %}<InputEncoding>{{ input_encoding }}</InputEncoding>{% endblock %}
 </OpenSearchDescription>
