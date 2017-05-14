@@ -27,7 +27,7 @@ Add ``"opensearch"`` to your urls definitions.
 
 .. code-block:: python
 
-    urlpatterns = patterns("",
+    urlpatterns += [
         url(r"^opensearch/", include("opensearch.urls")),
     )
 
