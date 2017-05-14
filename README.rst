@@ -70,6 +70,9 @@ Opensearch settings
 ``OPENSEARCH_SEARCH_URL``
     Contains a django URL name to search content. Defaults to ``"search"``.
 
+``OPENSEARCH_SEARCH_QUERYSTRING``
+    Contains the querystring to prepend to search parameter. Defaults to ``"q="``.
+
 ``OPENSEARCH_INPUT_ENCODING``
     Contains a string that indicates that the search engine supports search requests encoded with the specified character encoding. Defaults to ``"UTF-8"``.
 
