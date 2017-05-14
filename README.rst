@@ -10,45 +10,50 @@ A django-opensearch documentation
 
 Installation
 ------------
-* Obtain your copy of source code from git repository: ``git clone https://github.com/vint21h/django-opensearch.git``. Or download latest release from https://github.com/vint21h/django-opensearch/tags.
+* Obtain your copy of source code from the git repository: ``git clone https://github.com/vint21h/django-opensearch.git``. Or download the latest release from https://github.com/vint21h/django-opensearch/tags/.
 * Run ``python ./setup.py install`` from repository source tree or unpacked archive. Or use pip: ``pip install django-opensearch``.
 
 Configuration
 -------------
 Add ``"opensearch"`` to ``settings.INSTALLED_APPS``.
 
-    INSTALLED_APPS = (
-        ...,
+.. code-block:: python
 
+    INSTALLED_APPS += (
         "opensearch",
-
-        ...,
-
     )
 
 Add ``"opensearch"`` to your urls definitions.
 
+.. code-block:: python
+
     urlpatterns = patterns("",
-        ...,
-
         url(r"^opensearch/", include("opensearch.urls")),
-
-        ...,
-
     )
 
 Load ``"opensearch_tags"`` to your base template and place opensearch rel meta tag to <head> html tag by calling ``{% opensearch_meta %}``.
 
+For example:
+
+.. code-block:: django
+
+    {% load opensearch %}
+
+    <head>
+        {% opensearch_meta %}
+    </head>
+
+
 Opensearch settings
 -------------------
 ``OPENSEARCH_CONTACT_EMAIL``
-    Contains an email address at which the maintainer of the description document can be reached. Defaults to ``u""``.
+    Contains an email address at which the maintainer of the description document can be reached. Defaults to ``""``.
 
 ``OPENSEARCH_SHORT_NAME``
-    Contains a brief human-readable title that identifies this search engine. Defaults to ``u""``.
+    Contains a brief human-readable title that identifies this search engine. Defaults to ``""``.
 
 ``OPENSEARCH_DESCRIPTION``
-    Contains a human-readable text description of the search engine. Defaults to ``u""``.
+    Contains a human-readable text description of the search engine. Defaults to ``""``.
 
 ``OPENSEARCH_FAVICON_WIDTH``
     Contains width of an image that can be used in association with this search content. Defaults to ``16``.
@@ -57,16 +62,16 @@ Opensearch settings
     Contains height of an image that can be used in association with this search content. Defaults to ``16``.
 
 ``OPENSEARCH_FAVICON_TYPE``
-    Contains mimetype of an image that can be used in association with this search content. Defaults to ``u"image/x-icon"``.
+    Contains mimetype of an image that can be used in association with this search content. Defaults to ``"image/x-icon"``.
 
 ``OPENSEARCH_FAVICON_FILE``
-    Contains a URL that identifies the location of an image that can be used in association with this search content. Defaults to ``u"favicon.ico"``.
+    Contains a URL that identifies the location of an image that can be used in association with this search content. Defaults to ``"favicon.ico"``.
 
 ``OPENSEARCH_SEARCH_URL``
-    Contains a django URL name to search content. Defaults to ``u"search"``.
+    Contains a django URL name to search content. Defaults to ``"search"``.
 
 ``OPENSEARCH_INPUT_ENCODING``
-    Contains a string that indicates that the search engine supports search requests encoded with the specified character encoding. Defaults to ``u"UTF-8"``.
+    Contains a string that indicates that the search engine supports search requests encoded with the specified character encoding. Defaults to ``"UTF-8"``.
 
 
 Licensing
@@ -76,7 +81,7 @@ For complete license text see COPYING file.
 
 Contacts
 --------
-**Project Website**: https://github.com/vint21h/django-opensearch
+**Project Website**: https://github.com/vint21h/django-opensearch/
 
 **Author**: Alexei Andrushievich <vint21h@vint21h.pp.ua>
 

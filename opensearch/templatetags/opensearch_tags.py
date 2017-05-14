@@ -9,7 +9,11 @@ from django import template
 
 from opensearch import settings
 
-__all__ = ["opensearch_meta", ]
+
+__all__ = [
+    "opensearch_meta",
+]
+
 
 register = template.Library()
 

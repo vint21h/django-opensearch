@@ -7,6 +7,7 @@ from __future__ import unicode_literals
 
 from django.conf import settings
 
+
 __all__ = [
     "CONTACT_EMAIL",
     "SHORT_NAME",

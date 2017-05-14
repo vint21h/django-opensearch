@@ -1,6 +1,7 @@
 # django-opensearch
 # .gitignore
 
+.~*
 .*.swp
 *.pyc
 *.log
@@ -12,12 +13,11 @@
 *.bak
 .DS_Store
 *.save
-
 .idea/*
 *sublime*
 *geany*
 *komodo*
-*-venv/
+.env/*
 build/*
 dist/*
 *.egg-info/*
@@ -28,3 +28,10 @@ parts
 .pydevproject
 .settings/*
 media/*
+data/db/*
+static/*
+*.pid
+components/*
+bower_components/*
+node_modules/*
+error-pages/*

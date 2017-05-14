@@ -4,10 +4,14 @@
 # django-opensearch
 # setup.py
 
-from setuptools import setup, find_packages
+from setuptools import (
+    setup,
+    find_packages,
+)
+
 
 # metadata
-VERSION = (0, 2, 5)
+VERSION = (0, 2, 6)
 __version__ = ".".join(map(str, VERSION))
 
 setup(
@@ -19,7 +23,7 @@ setup(
     author_email="vint21h@vint21h.pp.ua",
     description="Handle opensearch.xml",
     license="GPLv3 or later",
-    url="https://github.com/vint21h/django-opensearch",
+    url="https://github.com/vint21h/django-opensearch/",
     download_url="https://github.com/vint21h/django-opensearch/archive/{version}.tar.gz".format(version=__version__),
     zip_safe=False,
     include_package_data=True,
@@ -27,7 +31,6 @@ setup(
         "Environment :: Plugins",
         "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
         "Operating System :: Unix",
-        "Programming Language :: Python :: 2.6",
         "Programming Language :: Python :: 2.7",
         "Programming Language :: Python :: 3",
         "Topic :: Utilities",
