@@ -37,7 +37,7 @@ For example:
 
 .. code-block:: django
 
-    {% load opensearch %}
+    {% load opensearch_tags %}
 
     <head>
         {% opensearch_meta %}

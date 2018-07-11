@@ -3,6 +3,7 @@
 # django-opensearch
 # opensearch/models.py
 
+
 from __future__ import unicode_literals
 
 

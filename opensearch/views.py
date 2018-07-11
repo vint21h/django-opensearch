@@ -3,6 +3,7 @@
 # django-opensearch
 # opensearch/views.py
 
+
 from __future__ import unicode_literals
 
 from django.core.urlresolvers import reverse
@@ -33,5 +34,5 @@ def opensearch(request):
         "querystring": settings.SEARCH_QUERYSTRING,
     })
     input_encoding = settings.INPUT_ENCODING.upper()
-    
+
     return render_to_response("opensearch/opensearch.xml", context=locals(), content_type="application/opensearchdescription+xml")

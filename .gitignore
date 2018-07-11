@@ -1,6 +1,7 @@
 # django-opensearch
 # .gitignore
 
+
 .~*
 .*.swp
 *.pyc
