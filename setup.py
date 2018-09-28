@@ -12,7 +12,7 @@ from setuptools import (
 
 
 # metadata
-VERSION = (0, 4, 1)
+VERSION = (0, 4, 2)
 __version__ = ".".join(map(str, VERSION))
 
 setup(
@@ -39,5 +39,7 @@ setup(
         "Framework :: Django :: 1.9",
         "Framework :: Django :: 1.10",
         "Framework :: Django :: 1.11",
+        "Framework :: Django :: 2.0",
+        "Framework :: Django :: 2.1",
     ]
 )
