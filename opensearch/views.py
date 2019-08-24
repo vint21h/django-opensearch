@@ -9,7 +9,7 @@ from django.http.request import HttpRequest
 from django.shortcuts import render_to_response
 from django.urls import reverse
 
-from opensearch import settings
+from opensearch.conf import settings
 
 
 __all__ = ["opensearch"]
@@ -25,20 +25,20 @@ def opensearch(request: HttpRequest) -> HttpResponse:
     :rtype: django.http.HttpResponse.
     """
 
-    contact_email = settings.CONTACT_EMAIL
-    short_name = settings.SHORT_NAME
-    description = settings.DESCRIPTION
-    favicon_width = settings.FAVICON_WIDTH
-    favicon_height = settings.FAVICON_HEIGHT
-    favicon_type = settings.FAVICON_TYPE
-    favicon_file = settings.FAVICON_FILE
+    contact_email = settings.OPENSEARCH_CONTACT_EMAIL
+    short_name = settings.OPENSEARCH_SHORT_NAME
+    description = settings.OPENSEARCH_DESCRIPTION
+    favicon_width = settings.OPENSEARCH_FAVICON_WIDTH
+    favicon_height = settings.OPENSEARCH_FAVICON_HEIGHT
+    favicon_type = settings.OPENSEARCH_FAVICON_TYPE
+    favicon_file = settings.OPENSEARCH_FAVICON_FILE
     url = "{url}?{querystring}{{searchTerms}}".format(
         **{
-            "url": request.build_absolute_uri(reverse(settings.SEARCH_URL)),
-            "querystring": settings.SEARCH_QUERYSTRING,
+            "url": request.build_absolute_uri(reverse(settings.OPENSEARCH_SEARCH_URL)),
+            "querystring": settings.OPENSEARCH_SEARCH_QUERYSTRING,
         }
     )
-    input_encoding = settings.INPUT_ENCODING.upper()
+    input_encoding = settings.OPENSEARCH_INPUT_ENCODING.upper()
 
     return render_to_response(
         "opensearch/opensearch.xml",

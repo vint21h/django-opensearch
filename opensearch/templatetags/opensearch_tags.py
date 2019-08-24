@@ -6,7 +6,7 @@
 
 from django import template
 
-from opensearch import settings
+from opensearch.conf import settings
 
 
 __all__ = ["opensearch_meta"]  # type: list
@@ -23,6 +23,6 @@ def opensearch_meta(context):
     Return meta rel opensearch tag.
     """
 
-    context.update({"DESCRIPTION": settings.DESCRIPTION})
+    context.update({"DESCRIPTION": settings.OPENSEARCH_DESCRIPTION})
 
     return context
