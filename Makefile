@@ -2,14 +2,30 @@
 # Makefile
 
 
-docs:
-	rst2html README.rst > index.html && zip docs.zip index.html
+.ONESHELL:
+PHONY: tox test twine-check twine-upload help
+TEST_PYPI_URL=https://test.pypi.org/legacy/
 
-clear:
-	rm -rf index.html docs.zip build dist django_opensearch.egg-info
+tox:
+	tox;\
 
-build:
-	./setup.py bdist_wheel sdist
+test:
+	./manage.py test $(TESTS);\
 
-upload:
-	./setup.py bdist_wheel sdist upload
+twine-check:
+	python setup.py bdist_wheel sdist;\
+	twine check dist/*;\
+	twine upload -s --repository-url $(TEST_PYPI_URL) dist/*;\
+
+twine-upload:
+	twine upload -s dist/*;\
+
+help:
+	@echo "    tox:"
+	@echo "        Run tox."
+	@echo "    test:"
+	@echo "        Run tests, can specify tests with 'TESTS' variable."
+	@echo "    twine-check:"
+	@echo "        Run some twine checks."
+	@echo "    twine-upload:"
+	@echo "        Uload package to PyPi using twine."

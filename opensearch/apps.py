@@ -4,15 +4,13 @@
 # opensearch/apps.py
 
 
-from __future__ import unicode_literals
-
 from django.apps import AppConfig
 
 
-__all__ = ["Config", ]
+__all__ = ["DjangoOpensearchConfig"]  # type: list
 
 
-class Config(AppConfig):
+class DjangoOpensearchConfig(AppConfig):
 
     name = "opensearch"
-    verbose_name = "Django opensearch"
+    verbose_name = "Django opensearch.xml"

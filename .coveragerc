@@ -1,0 +1,19 @@
+# django-opensearch
+# .coveragerc
+
+
+[run]
+branch = True
+source = opensearch
+omit =
+    */__init__.py
+   opensearch/apps.py
+
+[report]
+omit =
+    */__init__.py
+    opensearch/apps.py
+exclude_lines =
+    pragma: no cover
+
+[xml]

@@ -4,18 +4,15 @@
 # opensearch/urls.py
 
 
-from __future__ import unicode_literals
-
 from django.conf.urls import url
+
 from opensearch.views import opensearch
 
 
-__all__ = [
-    "urlpatterns",
-]
+__all__ = ["urlpatterns"]  # type: list
 
 
 # opensearch urls
 urlpatterns = [
-    url(r"^opensearch\.xml$", opensearch, name="opensearch"),  # opensearch
-]
+    url(r"^opensearch\.xml$", opensearch, name="opensearch")  # opensearch
+]  # type: list

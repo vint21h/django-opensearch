@@ -4,12 +4,7 @@
 # opensearch/__init__.py
 
 
-from __future__ import unicode_literals
+__all__ = ["default_app_config"]  # type: list
 
 
-__all__ = [
-    "default_app_config",
-]
-
-
-default_app_config = "opensearch.apps.Config"
+default_app_config = "opensearch.apps.DjangoOpensearchConfig"

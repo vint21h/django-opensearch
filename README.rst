@@ -15,27 +15,33 @@ Installation
 
 Configuration
 -------------
-Add ``"opensearch"`` to ``settings.INSTALLED_APPS``.
+* Add ``"opensearch"`` to ``settings.INSTALLED_APPS``.
 
 .. code-block:: python
+
+    # settings.py
 
     INSTALLED_APPS += (
         "opensearch",
-    )
+    )  # type: tuple
 
-Add ``"opensearch"`` to your urls definitions.
+* Add ``"opensearch"`` to your URLs definitions.
 
 .. code-block:: python
 
+    # urls.py
+
     urlpatterns += [
         url(r"^opensearch/", include("opensearch.urls")),
-    )
+    )  # type: list
 
-Load ``"opensearch_tags"`` to your base template and place opensearch rel meta tag to <head> html tag by calling ``{% opensearch_meta %}``.
-
-For example:
+Usage
+-----
+Load ``"opensearch_tags"`` to your base template and place opensearch rel meta tag to <head> HTML tag by calling ``{% opensearch_meta %}``.
 
 .. code-block:: django
+
+    {# base.html #}
 
     {% load opensearch_tags %}
 
@@ -44,8 +50,8 @@ For example:
     </head>
 
 
-Opensearch settings
--------------------
+django-opensearch settings
+--------------------------
 ``OPENSEARCH_CONTACT_EMAIL``
     Contains an email address at which the maintainer of the description document can be reached. Defaults to ``""``.
 
