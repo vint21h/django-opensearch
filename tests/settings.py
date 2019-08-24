@@ -33,7 +33,7 @@ TEMPLATES = [
 ]  # type: list
 
 
-# add nose test runner application and django-xicon
+# add nose test runner application and django-opensearch
 INSTALLED_APPS = ["django_nose", "opensearch"]  # type: list
 
 # add nose test runner
@@ -53,4 +53,4 @@ NOSE_ARGS = [
 ]  # type: list
 
 # configure urls
-ROOT_URLCONF = "xicon.urls"  # type: str
+ROOT_URLCONF = "opensearch.urls"  # type: str
