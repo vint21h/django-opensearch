@@ -5,6 +5,7 @@
 
 
 from django.apps import AppConfig
+from django.utils.translation import ugettext_lazy as _
 
 
 __all__ = ["DjangoOpensearchConfig"]  # type: list
@@ -13,4 +14,4 @@ __all__ = ["DjangoOpensearchConfig"]  # type: list
 class DjangoOpensearchConfig(AppConfig):
 
     name = "opensearch"
-    verbose_name = "Django opensearch.xml"
+    verbose_name = _("Django opensearch.xml")
