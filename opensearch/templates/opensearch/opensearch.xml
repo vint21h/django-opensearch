@@ -4,6 +4,6 @@
     {% block short-name %}{% if OPENSEARCH_SHORT_NAME %}<ShortName>{% trans OPENSEARCH_SHORT_NAME %}</ShortName>{% endif %}{% endblock %}
     {% block description %}{% if OPENSEARCH_DESCRIPTION %}<Description>{% trans OPENSEARCH_DESCRIPTION %}</Description>{% endif %}{% endblock %}
     {% block image %}{% if OPENSEARCH_FAVICON_WIDTH and OPENSEARCH_FAVICON_HEIGHT and OPENSEARCH_FAVICON_TYPE and OPENSEARCH_FAVICON_FILE %}<Image width="{{ OPENSEARCH_FAVICON_WIDTH }}" height="{{ OPENSEARCH_FAVICON_HEIGHT }}" type="{{ OPENSEARCH_FAVICON_TYPE }}">{% static OPENSEARCH_FAVICON_FILE %}</Image>{% endif %}{% endblock %}
-    {% block url %}{% if OPENSEARCH_URL %}<Url type="text/html" template="{{ url }}"/>{% endif %}{% endblock %}
-    {% block input-encoding %}{% if OPENSEARCH_INPUT_ENCODING %}<InputEncoding>{{ input_encoding }}</InputEncoding>{% endif %}{% endblock %}
+    {% block url %}{% if OPENSEARCH_URL %}<Url type="text/html" template="{{ OPENSEARCH_URL }}"/>{% endif %}{% endblock %}
+    {% block input-encoding %}{% if OPENSEARCH_INPUT_ENCODING %}<InputEncoding>{{ OPENSEARCH_INPUT_ENCODING }}</InputEncoding>{% endif %}{% endblock %}
 </OpenSearchDescription>

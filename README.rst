@@ -4,6 +4,8 @@
 A django-opensearch documentation
 =================================
 
+|Travis|_ |Coverage|_ |Codacy|_ |Requires|_ |pypi-license| |pypi-version| |pypi-python-version| |pypi-django-version| |pypi-format| |pypi-wheel| |pypi-status|
+
     *django-opensearch is a django reusable application to handle opensearch.xml*
 
 .. contents::
@@ -33,7 +35,7 @@ Configuration
 
     urlpatterns += [
         url(r"^opensearch/", include("opensearch.urls")),
-    )  # type: list
+    ]  # type: list
 
 Usage
 -----
@@ -95,3 +97,19 @@ Contacts
 **Author**: Alexei Andrushievich <vint21h@vint21h.pp.ua>
 
 For other authors list see AUTHORS file.
+
+.. |Travis| image:: https://travis-ci.org/vint21h/django-opensearch.svg?branch=master
+.. |Coverage| image:: https://api.codacy.com/project/badge/Coverage/c4c5db8aa2684496a08412f734395c19
+.. |Codacy| image:: https://api.codacy.com/project/badge/Grade/c4c5db8aa2684496a08412f734395c19
+.. |Requires| image:: https://requires.io/github/vint21h/django-opensearch/requirements.svg?branch=master
+.. |pypi-license| image:: https://img.shields.io/pypi/l/django-opensearch
+.. |pypi-version| image:: https://img.shields.io/pypi/v/django-opensearch
+.. |pypi-django-version| image:: https://img.shields.io/pypi/djversions/django-opensearch
+.. |pypi-python-version| image:: https://img.shields.io/pypi/pyversions/django-opensearch
+.. |pypi-format| image:: https://img.shields.io/pypi/format/django-opensearch
+.. |pypi-wheel| image:: https://img.shields.io/pypi/wheel/django-opensearch
+.. |pypi-status| image:: https://img.shields.io/pypi/status/django-opensearch
+.. _Travis: https://travis-ci.org/vint21h/django-opensearch/
+.. _Coverage: https://www.codacy.com/app/vint21h/django-opensearch
+.. _Codacy: https://www.codacy.com/app/vint21h/django-opensearch
+.. _Requires: https://requires.io/github/vint21h/django-opensearch/requirements/?branch=master

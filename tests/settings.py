@@ -14,6 +14,9 @@ sys.path.insert(0, str(pathlib.Path(__file__).absolute().parent.parent.parent))
 # secret key
 SECRET_KEY = "django-opensearch-test-key"  # type: str
 
+# security settings
+ALLOWED_HOSTS = ["example.com"]
+
 # configure databases
 DATABASES = {
     "default": {
