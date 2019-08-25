@@ -18,11 +18,16 @@ register = template.Library()
 @register.inclusion_tag(
     "opensearch/templatetags/opensearch_meta.html", takes_context=True
 )
-def opensearch_meta(context):
+def opensearch_meta(context: template.Context) -> template.Context:
     """
     Return meta rel opensearch tag.
+
+    :param context: template context.
+    :type context: django.template.Context.
+    :return: updated template context.
+    :rtype: django.template.Context.
     """
 
-    context.update({"DESCRIPTION": settings.OPENSEARCH_DESCRIPTION})
+    context.update({"OPENSEARCH_DESCRIPTION": settings.OPENSEARCH_DESCRIPTION})
 
     return context

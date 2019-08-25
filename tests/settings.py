@@ -54,3 +54,6 @@ NOSE_ARGS = [
 
 # configure urls
 ROOT_URLCONF = "opensearch.urls"  # type: str
+
+# opensearch settings
+OPENSEARCH_DESCRIPTION = "Search engine human-readable text description"
