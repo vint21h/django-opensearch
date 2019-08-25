@@ -56,4 +56,13 @@ NOSE_ARGS = [
 ROOT_URLCONF = "opensearch.urls"  # type: str
 
 # opensearch settings
-OPENSEARCH_DESCRIPTION = "Search engine human-readable text description"
+OPENSEARCH_CONTACT_EMAIL = "test@example.com"  # type: str
+OPENSEARCH_SHORT_NAME = "opensearch"  # type: str
+OPENSEARCH_DESCRIPTION = "Search engine human-readable text description"  # type: str
+OPENSEARCH_FAVICON_WIDTH = 16  # type: int
+OPENSEARCH_FAVICON_HEIGHT = 16  # type: int
+OPENSEARCH_FAVICON_TYPE = "image/x-icon"  # type str
+OPENSEARCH_FAVICON_FILE = "favicon.ico"  # type: str
+OPENSEARCH_SEARCH_URL = "search"  # type: str
+OPENSEARCH_SEARCH_QUERYSTRING = "q="  # type: str
+OPENSEARCH_INPUT_ENCODING = "UTF-8"  # type: str

@@ -44,7 +44,7 @@ class OpensearchMetaTemplatetagTest(TestCase):
         response = template.render(context)  # type: str
         expected = '<link rel="search" type="application/opensearchdescription+xml" title="Search engine human-readable text description" href="/opensearch.xml" />'  # noqa: E501, type: str
 
-        self.assertInHTML(needle=expected, haystack=response)
+        self.assertHTMLEqual(html1=response, html2=expected)
 
     @override_settings(OPENSEARCH_DESCRIPTION="")
     def test_opensearch_meta__render__without_description(self) -> None:

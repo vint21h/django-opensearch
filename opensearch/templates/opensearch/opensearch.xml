@@ -1,9 +1,9 @@
 {% load i18n %}{% load static %}<?xml version="1.0" encoding="UTF-8" ?>
 <OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
-    {% block contact %}<Contact>{{ contact_email }}</Contact>{% endblock %}
-    {% block short_name %}<ShortName>{% trans short_name %}</ShortName>{% endblock %}
-    {% block description %}<Description>{% trans description %}</Description>{% endblock %}
-    {% block image %}<Image width="{{ favicon_width }}" height="{{ favicon_height }}" type="{{ favicon_type }}">{% static favicon_file %}</Image>{% endblock %}
-    {% block url %}<Url type="text/html" template="{{ url }}"/>{% endblock %}
-    {% block input_encoding %}<InputEncoding>{{ input_encoding }}</InputEncoding>{% endblock %}
+    {% block contact %}{% if OPENSEARCH_CONTACT_EMAIL %}<Contact>{{ OPENSEARCH_CONTACT_EMAIL }}</Contact>{% endif %}{% endblock %}
+    {% block short-name %}{% if OPENSEARCH_SHORT_NAME %}<ShortName>{% trans OPENSEARCH_SHORT_NAME %}</ShortName>{% endif %}{% endblock %}
+    {% block description %}{% if OPENSEARCH_DESCRIPTION %}<Description>{% trans OPENSEARCH_DESCRIPTION %}</Description>{% endif %}{% endblock %}
+    {% block image %}{% if OPENSEARCH_FAVICON_WIDTH and OPENSEARCH_FAVICON_HEIGHT and OPENSEARCH_FAVICON_TYPE and OPENSEARCH_FAVICON_FILE %}<Image width="{{ OPENSEARCH_FAVICON_WIDTH }}" height="{{ OPENSEARCH_FAVICON_HEIGHT }}" type="{{ OPENSEARCH_FAVICON_TYPE }}">{% static OPENSEARCH_FAVICON_FILE %}</Image>{% endif %}{% endblock %}
+    {% block url %}{% if OPENSEARCH_URL %}<Url type="text/html" template="{{ url }}"/>{% endif %}{% endblock %}
+    {% block input-encoding %}{% if OPENSEARCH_INPUT_ENCODING %}<InputEncoding>{{ input_encoding }}</InputEncoding>{% endif %}{% endblock %}
 </OpenSearchDescription>
