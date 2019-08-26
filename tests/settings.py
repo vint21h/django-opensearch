@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 # django-opensearch
-# settings/settings.py
+# tests/settings.py
 
 
 import pathlib
