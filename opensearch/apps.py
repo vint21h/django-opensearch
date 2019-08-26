@@ -12,6 +12,9 @@ __all__ = ["DjangoOpensearchConfig"]  # type: list
 
 
 class DjangoOpensearchConfig(AppConfig):
+    """
+    Django opensearch.xml config.
+    """
 
-    name = "opensearch"
-    verbose_name = _("Django opensearch.xml")
+    name = "opensearch"  # type: str
+    verbose_name = _("Django opensearch.xml")  # type: str
