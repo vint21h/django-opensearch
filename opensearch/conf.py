@@ -37,4 +37,4 @@ class DjangoOpensearchAppConf(AppConf):
 
     class Meta:
 
-        prefix = "opensearch"
+        prefix = "opensearch"  # type: str

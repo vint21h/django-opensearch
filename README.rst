@@ -25,7 +25,7 @@ Configuration
 
     INSTALLED_APPS += (
         "opensearch",
-    )  # type: tuple
+    )
 
 * Add ``"opensearch"`` to your URLs definitions.
 
@@ -35,7 +35,7 @@ Configuration
 
     urlpatterns += [
         url(r"^opensearch/", include("opensearch.urls")),
-    ]  # type: list
+    ]
 
 Usage
 -----
