@@ -2,6 +2,7 @@
 # MANIFEST.in
 
 
+prune tests*
 include README.rst
 include COPYING
 include AUTHORS
