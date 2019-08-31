@@ -4,15 +4,18 @@
 # opensearch/urls.py
 
 
+from typing import List, Union
+
 from django.conf.urls import url
+from django.urls.resolvers import URLPattern, URLResolver
 
 from opensearch.views import opensearch
 
 
-__all__ = ["urlpatterns"]  # type: list
+__all__ = ["urlpatterns"]  # type: List[str]
 
 
 # opensearch urls
 urlpatterns = [
     url(r"^opensearch\.xml$", opensearch, name="opensearch")  # opensearch
-]  # type: list
+]  # type: List[Union[URLPattern, URLResolver]]

@@ -4,7 +4,10 @@
 # opensearch/__init__.py
 
 
-__all__ = ["default_app_config"]  # type: list
+from typing import List
+
+
+__all__ = ["default_app_config"]  # type: List[str]
 
 
 default_app_config = "opensearch.apps.DjangoOpensearchConfig"  # type: str

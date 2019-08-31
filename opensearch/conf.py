@@ -4,11 +4,13 @@
 # opensearch/conf.py
 
 
+from typing import List
+
 from appconf import AppConf
 from django.conf import settings
 
 
-__all__ = ["settings"]  # type: list
+__all__ = ["settings"]  # type: List[str]
 
 
 class DjangoOpensearchAppConf(AppConf):

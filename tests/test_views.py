@@ -5,6 +5,7 @@
 
 
 from django.conf.urls import url, include
+from django.core.handlers.wsgi import WSGIRequest
 from django.http import HttpRequest, HttpResponse
 from django.test import TestCase
 from django.test.utils import override_settings
@@ -51,7 +52,7 @@ class OpensearchViewTest(TestCase):
         :rtype: None.
         """
 
-        request = HttpRequest()
+        request = HttpRequest()  # type: HttpRequest
         request.META.update({"SERVER_NAME": "example.com", "SERVER_PORT": 80})
 
         self.assertIsInstance(obj=opensearch(request=request), cls=HttpResponse)
@@ -65,10 +66,10 @@ class OpensearchViewTest(TestCase):
         """
 
         with translation.override("en"):
-            response = self.client.get(path=reverse("opensearch"))
+            result = self.client.get(path=reverse("opensearch"))  # type: WSGIRequest
 
         self.assertTemplateUsed(
-            response=response, template_name="opensearch/opensearch.xml"
+            response=result, template_name="opensearch/opensearch.xml"
         )
 
     def test_opensearch__render(self) -> None:
@@ -90,9 +91,9 @@ class OpensearchViewTest(TestCase):
         </OpenSearchDescription>
         """  # type: str
         with translation.override("en"):
-            response = self.client.get(path=reverse("opensearch"))
+            result = self.client.get(path=reverse("opensearch"))  # type: WSGIRequest
 
-        self.assertHTMLEqual(html1=response.content.decode(), html2=expected)
+        self.assertHTMLEqual(html1=result.content.decode(), html2=expected)
 
     @override_settings(OPENSEARCH_CONTACT_EMAIL="")
     def test_opensearch__render__without_email(self) -> None:
@@ -113,12 +114,12 @@ class OpensearchViewTest(TestCase):
         </OpenSearchDescription>
         """  # type: str
         with translation.override("en"):
-            response = self.client.get(path=reverse("opensearch"))
+            result = self.client.get(path=reverse("opensearch"))  # type: WSGIRequest
 
         self.assertEqual(
-            first=response.context.get("OPENSEARCH_CONTACT_EMAIL"), second=""
+            first=result.context.get("OPENSEARCH_CONTACT_EMAIL"), second=""
         )
-        self.assertHTMLEqual(html1=response.content.decode(), html2=expected)
+        self.assertHTMLEqual(html1=result.content.decode(), html2=expected)
 
     @override_settings(OPENSEARCH_SHORT_NAME="")
     def test_opensearch__render__without_name(self) -> None:
@@ -139,10 +140,10 @@ class OpensearchViewTest(TestCase):
         </OpenSearchDescription>
         """  # type: str
         with translation.override("en"):
-            response = self.client.get(path=reverse("opensearch"))
+            result = self.client.get(path=reverse("opensearch"))  # type: WSGIRequest
 
-        self.assertEqual(first=response.context.get("OPENSEARCH_SHORT_NAME"), second="")
-        self.assertHTMLEqual(html1=response.content.decode(), html2=expected)
+        self.assertEqual(first=result.context.get("OPENSEARCH_SHORT_NAME"), second="")
+        self.assertHTMLEqual(html1=result.content.decode(), html2=expected)
 
     @override_settings(OPENSEARCH_DESCRIPTION="")
     def test_opensearch__render__without_description(self) -> None:
@@ -163,12 +164,10 @@ class OpensearchViewTest(TestCase):
         </OpenSearchDescription>
         """  # type: str
         with translation.override("en"):
-            response = self.client.get(path=reverse("opensearch"))
+            result = self.client.get(path=reverse("opensearch"))  # type: WSGIRequest
 
-        self.assertEqual(
-            first=response.context.get("OPENSEARCH_DESCRIPTION"), second=""
-        )
-        self.assertHTMLEqual(html1=response.content.decode(), html2=expected)
+        self.assertEqual(first=result.context.get("OPENSEARCH_DESCRIPTION"), second="")
+        self.assertHTMLEqual(html1=result.content.decode(), html2=expected)
 
     @override_settings(
         OPENSEARCH_FAVICON_WIDTH=0,
@@ -194,21 +193,15 @@ class OpensearchViewTest(TestCase):
         </OpenSearchDescription>
         """  # type: str
         with translation.override("en"):
-            response = self.client.get(path=reverse("opensearch"))
+            result = self.client.get(path=reverse("opensearch"))  # type: WSGIRequest
 
+        self.assertEqual(first=result.context.get("OPENSEARCH_FAVICON_WIDTH"), second=0)
         self.assertEqual(
-            first=response.context.get("OPENSEARCH_FAVICON_WIDTH"), second=0
+            first=result.context.get("OPENSEARCH_FAVICON_HEIGHT"), second=0
         )
-        self.assertEqual(
-            first=response.context.get("OPENSEARCH_FAVICON_HEIGHT"), second=0
-        )
-        self.assertEqual(
-            first=response.context.get("OPENSEARCH_FAVICON_TYPE"), second=""
-        )
-        self.assertEqual(
-            first=response.context.get("OPENSEARCH_FAVICON_FILE"), second=""
-        )
-        self.assertHTMLEqual(html1=response.content.decode(), html2=expected)
+        self.assertEqual(first=result.context.get("OPENSEARCH_FAVICON_TYPE"), second="")
+        self.assertEqual(first=result.context.get("OPENSEARCH_FAVICON_FILE"), second="")
+        self.assertHTMLEqual(html1=result.content.decode(), html2=expected)
 
     @override_settings(OPENSEARCH_SEARCH_URL="", OPENSEARCH_SEARCH_QUERYSTRING="")
     def test_opensearch__render__without_url(self) -> None:
@@ -244,9 +237,9 @@ class OpensearchViewTest(TestCase):
         """  # type: str
 
         with translation.override("en"):
-            response = self.client.get(path=reverse("opensearch"))
+            result = self.client.get(path=reverse("opensearch"))  # type: WSGIRequest
 
         self.assertEqual(
-            first=response.context.get("OPENSEARCH_INPUT_ENCODING"), second=""
+            first=result.context.get("OPENSEARCH_INPUT_ENCODING"), second=""
         )
-        self.assertHTMLEqual(html1=response.content.decode(), html2=expected)
+        self.assertHTMLEqual(html1=result.content.decode(), html2=expected)

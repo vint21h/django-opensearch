@@ -4,30 +4,26 @@
 # opensearch/templatetags/opensearch_tags.py
 
 
+from typing import Dict, List
+
 from django import template
 
 from opensearch.conf import settings
 
 
-__all__ = ["opensearch_meta"]  # type: list
+__all__ = ["opensearch_meta"]  # type: List[str]
 
 
 register = template.Library()
 
 
-@register.inclusion_tag(
-    "opensearch/templatetags/opensearch_meta.html", takes_context=True
-)
-def opensearch_meta(context: template.Context) -> template.Context:
+@register.inclusion_tag("opensearch/templatetags/opensearch_meta.html")
+def opensearch_meta() -> Dict[str, str]:
     """
     Return meta rel opensearch tag.
 
-    :param context: template context.
-    :type context: django.template.Context.
-    :return: updated template context.
-    :rtype: django.template.Context.
+    :return: opensearch description.
+    :rtype: dDict[str, str].
     """
 
-    context.update({"OPENSEARCH_DESCRIPTION": settings.OPENSEARCH_DESCRIPTION})
-
-    return context
+    return {"OPENSEARCH_DESCRIPTION": settings.OPENSEARCH_DESCRIPTION}

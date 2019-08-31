@@ -4,11 +4,13 @@
 # opensearch/apps.py
 
 
+from typing import List
+
 from django.apps import AppConfig
 from django.utils.translation import ugettext_lazy as _
 
 
-__all__ = ["DjangoOpensearchConfig"]  # type: list
+__all__ = ["DjangoOpensearchConfig"]  # type: List[str]
 
 
 class DjangoOpensearchConfig(AppConfig):
