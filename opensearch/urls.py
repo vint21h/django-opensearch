@@ -4,7 +4,7 @@
 # opensearch/urls.py
 
 
-from typing import List, Union  # noqa: W0611
+from typing import List, Union  # pylint: disable=W0611
 
 from django.conf.urls import url
 from django.urls.resolvers import URLPattern, URLResolver

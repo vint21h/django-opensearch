@@ -4,7 +4,7 @@
 # tests/test_views.py
 
 
-from typing import List, Union  # noqa: W0611
+from typing import List, Union  # pylint: disable=W0611
 
 from django.conf.urls import url, include
 from django.http import HttpRequest, HttpResponse
