@@ -7,7 +7,7 @@
 from typing import List, Union  # pylint: disable=W0611
 
 from django.conf.urls import url
-from django.urls.resolvers import URLPattern, URLResolver
+from django.urls.resolvers import URLPattern, URLResolver  # pylint: disable=W0611
 
 from opensearch.views import opensearch
 

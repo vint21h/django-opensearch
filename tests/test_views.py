@@ -12,7 +12,7 @@ from django.test import TestCase
 from django.test.utils import override_settings
 from django.urls import reverse
 from django.urls.exceptions import NoReverseMatch
-from django.urls.resolvers import URLPattern, URLResolver
+from django.urls.resolvers import URLPattern, URLResolver  # pylint: disable=W0611
 from django.utils import translation
 
 from opensearch.views import opensearch
