@@ -4,6 +4,8 @@
 # opensearch/views.py
 
 
+from typing import Dict, List, Union
+
 from django.http import HttpResponse
 from django.http.request import HttpRequest
 from django.shortcuts import render_to_response
@@ -12,7 +14,7 @@ from django.urls import reverse
 from opensearch.conf import settings
 
 
-__all__ = ["opensearch"]
+__all__ = ["opensearch"]  # type: List[str]
 
 
 def opensearch(request: HttpRequest) -> HttpResponse:
@@ -42,7 +44,7 @@ def opensearch(request: HttpRequest) -> HttpResponse:
             }
         ),
         "OPENSEARCH_INPUT_ENCODING": settings.OPENSEARCH_INPUT_ENCODING.upper(),
-    }  # type: dict
+    }  # type: Dict[str, Union[str, int]]
 
     return render_to_response(
         "opensearch/opensearch.xml",
