@@ -4,7 +4,7 @@
 # opensearch/apps.py
 
 
-from typing import List
+from typing import List  # noqa: W0611
 
 from django.apps import AppConfig
 from django.utils.translation import ugettext_lazy as _

@@ -4,6 +4,8 @@
 # tests/templatetags/test_opensearch_tags.py
 
 
+from typing import Dict, List  # noqa: W0611
+
 from django.template import Context, Template
 from django.test import TestCase
 from django.test.utils import override_settings
@@ -12,7 +14,7 @@ from opensearch.conf import settings
 from opensearch.templatetags.opensearch_tags import opensearch_meta
 
 
-__all__ = ["OpensearchMetaTemplatetagTest"]  # type: list
+__all__ = ["OpensearchMetaTemplatetagTest"]  # type: List[str]
 
 
 class OpensearchMetaTemplatetagTest(TestCase):
@@ -28,10 +30,10 @@ class OpensearchMetaTemplatetagTest(TestCase):
         :rtype: None.
         """
 
-        result = opensearch_meta()  # type: dict
+        result = opensearch_meta()  # type: Dict[str, str]
         expected = {
             "OPENSEARCH_DESCRIPTION": settings.OPENSEARCH_DESCRIPTION
-        }  # type: dict
+        }  # type: Dict[str, str]
 
         self.assertIsInstance(obj=result, cls=dict)
         self.assertDictEqual(d1=result, d2=expected)
