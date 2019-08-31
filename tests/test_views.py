@@ -119,7 +119,9 @@ class OpensearchViewTest(TestCase):
             result = self.client.get(path=reverse("opensearch"))  # type: HttpResponse
 
         self.assertEqual(
-            first=result.context.get("OPENSEARCH_CONTACT_EMAIL"),  # type: ignore
+            first=result.context.get("OPENSEARCH_CONTACT_EMAIL")
+            if result.context
+            else None,
             second="",
         )
         self.assertHTMLEqual(html1=result.content.decode(), html2=expected)
@@ -146,7 +148,10 @@ class OpensearchViewTest(TestCase):
             result = self.client.get(path=reverse("opensearch"))  # type: HttpResponse
 
         self.assertEqual(
-            first=result.context.get("OPENSEARCH_SHORT_NAME"), second=""  # type: ignore
+            first=result.context.get("OPENSEARCH_SHORT_NAME")
+            if result.context
+            else None,
+            second="",
         )
         self.assertHTMLEqual(html1=result.content.decode(), html2=expected)
 
@@ -172,7 +177,9 @@ class OpensearchViewTest(TestCase):
             result = self.client.get(path=reverse("opensearch"))  # type: HttpResponse
 
         self.assertEqual(
-            first=result.context.get("OPENSEARCH_DESCRIPTION"),  # type: ignore
+            first=result.context.get("OPENSEARCH_DESCRIPTION")
+            if result.context
+            else None,
             second="",
         )
         self.assertHTMLEqual(html1=result.content.decode(), html2=expected)
@@ -204,19 +211,27 @@ class OpensearchViewTest(TestCase):
             result = self.client.get(path=reverse("opensearch"))  # type: HttpResponse
 
         self.assertEqual(
-            first=result.context.get("OPENSEARCH_FAVICON_WIDTH"),  # type: ignore
+            first=result.context.get("OPENSEARCH_FAVICON_WIDTH")
+            if result.context
+            else None,
             second=0,
         )
         self.assertEqual(
-            first=result.context.get("OPENSEARCH_FAVICON_HEIGHT"),  # type: ignore
+            first=result.context.get("OPENSEARCH_FAVICON_HEIGHT")
+            if result.context
+            else None,
             second=0,
         )
         self.assertEqual(
-            first=result.context.get("OPENSEARCH_FAVICON_TYPE"),  # type: ignore
+            first=result.context.get("OPENSEARCH_FAVICON_TYPE")
+            if result.context
+            else None,
             second="",
         )
         self.assertEqual(
-            first=result.context.get("OPENSEARCH_FAVICON_FILE"),  # type: ignore
+            first=result.context.get("OPENSEARCH_FAVICON_FILE")
+            if result.context
+            else None,
             second="",
         )
         self.assertHTMLEqual(html1=result.content.decode(), html2=expected)
@@ -258,7 +273,9 @@ class OpensearchViewTest(TestCase):
             result = self.client.get(path=reverse("opensearch"))  # type: HttpResponse
 
         self.assertEqual(
-            first=result.context.get("OPENSEARCH_INPUT_ENCODING"),  # type: ignore
+            first=result.context.get("OPENSEARCH_INPUT_ENCODING")
+            if result.context
+            else None,
             second="",
         )
         self.assertHTMLEqual(html1=result.content.decode(), html2=expected)
