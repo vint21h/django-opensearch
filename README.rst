@@ -4,7 +4,7 @@
 A django-opensearch documentation
 =================================
 
-|Travis|_ |Coverage|_ |Codacy|_ |Requires|_ |pypi-license| |pypi-version| |pypi-python-version| |pypi-django-version| |pypi-format| |pypi-wheel| |pypi-status|
+|Travis|_ |Coverage|_ |Codacy|_ |Requires|_ |pypi-license|_ |pypi-version|_ |pypi-python-version|_ |pypi-django-version|_ |pypi-format|_ |pypi-wheel|_ |pypi-status|_
 
     *django-opensearch is a django reusable application to handle opensearch.xml*
 
@@ -113,3 +113,10 @@ For other authors list see AUTHORS file.
 .. _Coverage: https://www.codacy.com/app/vint21h/django-opensearch
 .. _Codacy: https://www.codacy.com/app/vint21h/django-opensearch
 .. _Requires: https://requires.io/github/vint21h/django-opensearch/requirements/?branch=master
+.. _pypi-license: https://pypi.org/project/django-opensearch/
+.. _pypi-version: https://pypi.org/project/django-opensearch/
+.. _pypi-django-version: https://pypi.org/project/django-opensearch/
+.. _pypi-python-version: https://pypi.org/project/django-opensearch/
+.. _pypi-format: https://pypi.org/project/django-opensearch/
+.. _pypi-wheel: https://pypi.org/project/django-opensearch/
+.. _pypi-status: https://pypi.org/project/django-opensearch/
