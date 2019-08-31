@@ -4,7 +4,7 @@
 # opensearch/templatetags/opensearch_tags.py
 
 
-from typing import Dict, List
+from typing import Dict, List  # pylint: disable=W0611
 
 from django import template
 
