@@ -4,7 +4,7 @@
 # opensearch/conf.py
 
 
-from typing import List  # noqa: W0611
+from typing import List  # pylint: disable=W0611
 
 from appconf import AppConf
 from django.conf import settings

@@ -4,7 +4,7 @@
 # tests/templatetags/test_opensearch_tags.py
 
 
-from typing import Dict, List  # noqa: W0611
+from typing import Dict, List  # pylint: disable=W0611
 
 from django.template import Context, Template
 from django.test import TestCase

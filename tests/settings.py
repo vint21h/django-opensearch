@@ -6,7 +6,7 @@
 
 import pathlib
 import sys
-from typing import Dict, List, Union  # noqa: W0611
+from typing import Dict, List, Union  # pylint: disable=W0611
 
 
 # black magic to use imports from library code
