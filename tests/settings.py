@@ -6,6 +6,7 @@
 
 import pathlib
 import sys
+from typing import Dict, List, Union  # noqa: W0611
 
 
 # black magic to use imports from library code
@@ -23,7 +24,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": "django-opensearch-tests.sqlite3",
     }
-}  # type: dict
+}  # type: Dict[str, Dict[str, str]]
 
 # configure templates
 TEMPLATES = [
@@ -33,11 +34,11 @@ TEMPLATES = [
         "APP_DIRS": True,
         "OPTIONS": {},
     }
-]  # type: list
+]  # type: List[Dict[str, Union[str, List[str], bool, Dict[str, str]]]]
 
 
 # add nose test runner application and django-opensearch
-INSTALLED_APPS = ["django_nose", "opensearch"]  # type: list
+INSTALLED_APPS = ["django_nose", "opensearch"]  # type: List[str]
 
 # add nose test runner
 TEST_RUNNER = "django_nose.NoseTestSuiteRunner"  # type: str
@@ -53,7 +54,7 @@ NOSE_ARGS = [
     "--cover-erase",
     "--cover-package=opensearch",
     "--logging-clear-handlers",
-]  # type: list
+]  # type: List[str]
 
 # configure urls
 ROOT_URLCONF = "opensearch.urls"  # type: str
