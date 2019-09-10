@@ -23,7 +23,7 @@ def opensearch_meta() -> Dict[str, str]:
     Return meta rel opensearch tag.
 
     :return: opensearch description.
-    :rtype: dDict[str, str].
+    :rtype: Dict[str, str].
     """
 
     return {"OPENSEARCH_DESCRIPTION": settings.OPENSEARCH_DESCRIPTION}

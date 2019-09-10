@@ -1,6 +1,7 @@
 .. django-opensearch
 .. README.rst
 
+
 A django-opensearch documentation
 =================================
 
