@@ -95,7 +95,7 @@ class OpensearchViewTest(TestCase):
         with translation.override("en"):
             result = self.client.get(path=reverse("opensearch"))  # type: HttpResponse
 
-        self.assertHTMLEqual(html1=result.content.decode(), html2=expected)
+        self.assertXMLEqual(xml1=result.content.decode(), xml2=expected)
 
     @override_settings(OPENSEARCH_CONTACT_EMAIL="")
     def test_opensearch__render__without_email(self) -> None:
@@ -124,7 +124,7 @@ class OpensearchViewTest(TestCase):
             else None,
             second="",
         )
-        self.assertHTMLEqual(html1=result.content.decode(), html2=expected)
+        self.assertXMLEqual(xml1=result.content.decode(), xml2=expected)
 
     @override_settings(OPENSEARCH_SHORT_NAME="")
     def test_opensearch__render__without_name(self) -> None:
@@ -153,7 +153,7 @@ class OpensearchViewTest(TestCase):
             else None,
             second="",
         )
-        self.assertHTMLEqual(html1=result.content.decode(), html2=expected)
+        self.assertXMLEqual(xml1=result.content.decode(), xml2=expected)
 
     @override_settings(OPENSEARCH_DESCRIPTION="")
     def test_opensearch__render__without_description(self) -> None:
@@ -182,7 +182,7 @@ class OpensearchViewTest(TestCase):
             else None,
             second="",
         )
-        self.assertHTMLEqual(html1=result.content.decode(), html2=expected)
+        self.assertXMLEqual(xml1=result.content.decode(), xml2=expected)
 
     @override_settings(
         OPENSEARCH_FAVICON_WIDTH=0,
@@ -234,7 +234,7 @@ class OpensearchViewTest(TestCase):
             else None,
             second="",
         )
-        self.assertHTMLEqual(html1=result.content.decode(), html2=expected)
+        self.assertXMLEqual(xml1=result.content.decode(), xml2=expected)
 
     @override_settings(OPENSEARCH_SEARCH_URL="", OPENSEARCH_SEARCH_QUERYSTRING="")
     def test_opensearch__render__without_url(self) -> None:
@@ -278,4 +278,4 @@ class OpensearchViewTest(TestCase):
             else None,
             second="",
         )
-        self.assertHTMLEqual(html1=result.content.decode(), html2=expected)
+        self.assertXMLEqual(xml1=result.content.decode(), xml2=expected)
