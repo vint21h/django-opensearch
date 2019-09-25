@@ -7,14 +7,14 @@ A django-opensearch documentation
 
 |Travis|_ |Coverage|_ |Codacy|_ |Requires|_ |pypi-license|_ |pypi-version|_ |pypi-python-version|_ |pypi-django-version|_ |pypi-format|_ |pypi-wheel|_ |pypi-status|_
 
-    *django-opensearch is a django reusable application to handle opensearch.xml*
+    *django-opensearch is a Django reusable application to handle opensearch.xml*
 
 .. contents::
 
 Installation
 ------------
 * Obtain your copy of source code from the git repository: ``git clone https://github.com/vint21h/django-opensearch.git``. Or download the latest release from https://github.com/vint21h/django-opensearch/tags/.
-* Run ``python ./setup.py install`` from repository source tree or unpacked archive. Or use pip: ``pip install django-opensearch``.
+* Run ``python ./setup.py install`` from the repository source tree or unpacked archive. Or use pip: ``pip install django-opensearch``.
 
 Configuration
 -------------
@@ -77,7 +77,7 @@ django-opensearch settings
     Contains a URL that identifies the location of an image that can be used in association with this search content. Defaults to ``"favicon.ico"``.
 
 ``OPENSEARCH_SEARCH_URL``
-    Contains a django URL name to search content. Defaults to ``"search"``.
+    Contains a Django URL name to search content. Defaults to ``"search"``.
 
 ``OPENSEARCH_SEARCH_QUERYSTRING``
     Contains the querystring to prepend to search parameter. Defaults to ``"q="``.
