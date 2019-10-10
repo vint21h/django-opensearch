@@ -4,9 +4,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: django-opensearch 0.8.1\n"
+"Project-Id-Version: django-opensearch 0.9.0\n"
 "Report-Msgid-Bugs-To: Alexei Andrushievich <vint21h@vint21h.pp.ua>\n"
-"POT-Creation-Date: 2019-10-08 13:43+0300\n"
+"POT-Creation-Date: 2019-10-10 10:28+0300\n"
 "PO-Revision-Date: 2019-08-25 22:42+0300\n"
 "Last-Translator: Alexei Andrushievich <vint21h@vint21h.pp.ua>\n"
 "Language-Team: Alexei Andrushievich <vint21h@vint21h.pp.ua>\n"
@@ -18,6 +18,6 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 
-#: apps.py:22
+#: opensearch/apps.py:22
 msgid "Django opensearch.xml"
 msgstr "Django opensearch.xml"
