@@ -7,5 +7,6 @@ include README.rst
 include COPYING
 include AUTHORS
 recursive-include opensearch *.po
+recursive-include opensearch *.mo
 include opensearch/templates/opensearch/opensearch.xml
 include opensearch/templates/opensearch/templatetags/opensearch_meta.html
