@@ -12,6 +12,12 @@ repos:
       pass_filenames: false
       entry: pipenv run seed-isort-config
       types: [python]
+    - id: removestar
+      name: removestar
+      stages: [commit]
+      language: system
+      entry: pipenv run removestar -i opensearch tests
+      types: [python]
     - id: isort
       name: isort
       stages: [commit]
@@ -22,7 +28,7 @@ repos:
       name: black
       stages: [commit]
       language: system
-      entry: pipenv run black opensearch
+      entry: pipenv run black opensearch tests
       types: [python]
       language_version: python3.7
     - id: flake8
@@ -37,6 +43,20 @@ repos:
       language: system
       entry: pipenv run pylint opensearch tests
       types: [python]
+    - id: bandit
+      name: bandit
+      stages: [commit]
+      language: system
+      entry: bandit -r opensearch tests
+      types: [python]
+      pass_filenames: false
+    - id: dodgy
+      name: dodgy
+      stages: [commit]
+      language: system
+      entry: dodgy
+      types: [python]
+      pass_filenames: false
     - id: mypy
       name: mypy
       stages: [commit]
@@ -51,8 +71,15 @@ repos:
       pass_filenames: false
       entry: pipenv run check-manifest
       types: [python]
+    - id: pyroma
+      name: pyroma
+      stages: [commit]
+      language: system
+      pass_filenames: false
+      entry: pipenv run pyroma -d .
+      types: [python]
 -   repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v2.3.0
+    rev: v2.4.0
     hooks:
       - id: trailing-whitespace
       - id: end-of-file-fixer

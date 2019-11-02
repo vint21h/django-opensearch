@@ -1,0 +1,6 @@
+# django-opensearch
+# .bandit
+
+
+[bandit]
+skips: ['B507']
