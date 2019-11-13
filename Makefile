@@ -1,4 +1,4 @@
-# django-xicon
+# django-opensearch
 # Makefile
 
 
