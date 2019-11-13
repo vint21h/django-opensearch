@@ -5,7 +5,7 @@
 A django-opensearch documentation
 =================================
 
-|Travis|_ |Coverage|_ |Codacy|_ |Requires|_ |pypi-license|_ |pypi-version|_ |pypi-python-version|_ |pypi-django-version|_ |pypi-format|_ |pypi-wheel|_ |pypi-status|_
+|Travis|_ |Coverage|_ |Requires|_ |pypi-license|_ |pypi-version|_ |pypi-python-version|_ |pypi-django-version|_ |pypi-format|_ |pypi-wheel|_ |pypi-status|_
 
     *django-opensearch is a Django reusable application to handle opensearch.xml*
 
@@ -103,8 +103,6 @@ For other authors list see AUTHORS file.
     :alt: Travis
 .. |Coverage| image:: https://api.codacy.com/project/badge/Coverage/c4c5db8aa2684496a08412f734395c19
     :alt: Coverage
-.. |Codacy| image:: https://api.codacy.com/project/badge/Grade/c4c5db8aa2684496a08412f734395c19
-    :alt: Codacy
 .. |Requires| image:: https://requires.io/github/vint21h/django-opensearch/requirements.svg?branch=master
     :alt: Requires
 .. |pypi-license| image:: https://img.shields.io/pypi/l/django-opensearch
@@ -123,7 +121,6 @@ For other authors list see AUTHORS file.
     :alt: Package status
 .. _Travis: https://travis-ci.org/vint21h/django-opensearch/
 .. _Coverage: https://www.codacy.com/app/vint21h/django-opensearch
-.. _Codacy: https://www.codacy.com/app/vint21h/django-opensearch
 .. _Requires: https://requires.io/github/vint21h/django-opensearch/requirements/?branch=master
 .. _pypi-license: https://pypi.org/project/django-opensearch/
 .. _pypi-version: https://pypi.org/project/django-opensearch/
