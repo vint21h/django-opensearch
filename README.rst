@@ -24,9 +24,9 @@ Configuration
 
     # settings.py
 
-    INSTALLED_APPS += (
+    INSTALLED_APPS += [
         "opensearch",
-    )
+    ]
 
 * Add ``"opensearch"`` to your URLs definitions.
 
@@ -53,8 +53,8 @@ Load ``"opensearch_tags"`` to your base template and place opensearch rel meta t
     </head>
 
 
-django-opensearch settings
---------------------------
+Settings
+--------
 ``OPENSEARCH_CONTACT_EMAIL``
     Contains an email address at which the maintainer of the description document can be reached. Defaults to ``""``.
 
@@ -100,16 +100,27 @@ Contacts
 For other authors list see AUTHORS file.
 
 .. |Travis| image:: https://travis-ci.org/vint21h/django-opensearch.svg?branch=master
+    :alt: Travis
 .. |Coverage| image:: https://api.codacy.com/project/badge/Coverage/c4c5db8aa2684496a08412f734395c19
+    :alt: Coverage
 .. |Codacy| image:: https://api.codacy.com/project/badge/Grade/c4c5db8aa2684496a08412f734395c19
+    :alt: Codacy
 .. |Requires| image:: https://requires.io/github/vint21h/django-opensearch/requirements.svg?branch=master
+    :alt: Requires
 .. |pypi-license| image:: https://img.shields.io/pypi/l/django-opensearch
+    :alt: License
 .. |pypi-version| image:: https://img.shields.io/pypi/v/django-opensearch
+    :alt: Version
 .. |pypi-django-version| image:: https://img.shields.io/pypi/djversions/django-opensearch
+    :alt: Supported Django version
 .. |pypi-python-version| image:: https://img.shields.io/pypi/pyversions/django-opensearch
+    :alt: Supported Python version
 .. |pypi-format| image:: https://img.shields.io/pypi/format/django-opensearch
+    :alt: Package format
 .. |pypi-wheel| image:: https://img.shields.io/pypi/wheel/django-opensearch
+    :alt: Python wheel support
 .. |pypi-status| image:: https://img.shields.io/pypi/status/django-opensearch
+    :alt: Package status
 .. _Travis: https://travis-ci.org/vint21h/django-opensearch/
 .. _Coverage: https://www.codacy.com/app/vint21h/django-opensearch
 .. _Codacy: https://www.codacy.com/app/vint21h/django-opensearch
