@@ -8,7 +8,7 @@ from typing import Dict, List, Union  # pylint: disable=W0611
 
 from django.http import HttpResponse
 from django.http.request import HttpRequest
-from django.shortcuts import render_to_response
+from django.shortcuts import render
 from django.urls import reverse
 
 from opensearch.conf import settings
@@ -46,8 +46,9 @@ def opensearch(request: HttpRequest) -> HttpResponse:
         "OPENSEARCH_INPUT_ENCODING": settings.OPENSEARCH_INPUT_ENCODING.upper(),
     }  # type: Dict[str, Union[str, int]]
 
-    return render_to_response(
-        "opensearch/opensearch.xml",
+    return render(
+        request=request,
+        template_name="opensearch/opensearch.xml",
         context=context,
         content_type="application/opensearchdescription+xml",
     )
