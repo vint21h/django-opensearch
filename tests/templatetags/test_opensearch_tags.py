@@ -50,7 +50,7 @@ class OpensearchMetaTemplatetagTest(TestCase):
             "{% load opensearch_tags %}" "{% opensearch_meta %}"
         )  # type: Template
         result = template.render(context=Context())  # type: str
-        expected = '<link rel="search" type="application/opensearchdescription+xml" title="Search engine human-readable text description" href="/opensearch.xml" />'  # noqa: E501, type: str
+        expected = '<link rel="search" type="application/opensearchdescription+xml" title="Search engine human-readable text description" href="/opensearch.xml" />'  # type: str  # noqa: E501
 
         self.assertHTMLEqual(html1=result, html2=expected)
 

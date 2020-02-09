@@ -13,8 +13,8 @@ A django-opensearch documentation
 
 Installation
 ------------
-* Obtain your copy of source code from the git repository: ``git clone https://github.com/vint21h/django-opensearch.git``. Or download the latest release from https://github.com/vint21h/django-opensearch/tags/.
-* Run ``python ./setup.py install`` from the repository source tree or unpacked archive. Or use pip: ``pip install django-opensearch``.
+* Obtain your copy of source code from the git repository: ``$ git clone https://github.com/vint21h/django-opensearch.git``. Or download the latest release from https://github.com/vint21h/django-opensearch/tags/.
+* Run ``$ python ./setup.py install`` from the repository source tree or unpacked archive. Or use pip: ``$ pip install django-opensearch``.
 
 Configuration
 -------------
@@ -52,7 +52,6 @@ Load ``"opensearch_tags"`` to your base template and place opensearch rel meta t
         {% opensearch_meta %}
     </head>
 
-
 Settings
 --------
 ``OPENSEARCH_CONTACT_EMAIL``
@@ -84,7 +83,6 @@ Settings
 
 ``OPENSEARCH_INPUT_ENCODING``
     Contains a string that indicates that the search engine supports search requests encoded with the specified character encoding. Defaults to ``"UTF-8"``.
-
 
 Licensing
 ---------
