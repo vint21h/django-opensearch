@@ -37,6 +37,12 @@ repos:
       language: system
       entry: bash -c 'PYTHONPATH="$PYTHONPATH:$PWD" pipenv run flake8 --mypy-config=setup.cfg'
       types: [python]
+    - id: interrogate
+      name: interrogate
+      stages: [commit]
+      language: system
+      entry: interrogate opensearch tests -I -M
+      types: [python]
     - id: pylint
       name: pylint
       stages: [commit]
@@ -79,7 +85,7 @@ repos:
       entry: pipenv run pyroma -d .
       types: [python]
 -   repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v2.5.0
+    rev: v3.1.0
     hooks:
       - id: trailing-whitespace
       - id: end-of-file-fixer
