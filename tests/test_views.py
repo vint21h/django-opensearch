@@ -6,14 +6,14 @@
 
 from typing import List, Union  # pylint: disable=W0611
 
-from django.conf.urls import url, include
-from django.http import HttpRequest, HttpResponse
-from django.test import TestCase
-from django.test.utils import override_settings
 from django.urls import reverse
+from django.test import TestCase
+from django.utils import translation
+from django.conf.urls import url, include
+from django.test.utils import override_settings
+from django.http import HttpRequest, HttpResponse
 from django.urls.exceptions import NoReverseMatch
 from django.urls.resolvers import URLPattern, URLResolver  # pylint: disable=W0611
-from django.utils import translation
 
 from opensearch.views import opensearch
 

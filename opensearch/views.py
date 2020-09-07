@@ -6,10 +6,10 @@
 
 from typing import Dict, List, Union  # pylint: disable=W0611
 
+from django.urls import reverse
+from django.shortcuts import render
 from django.http import HttpResponse
 from django.http.request import HttpRequest
-from django.shortcuts import render
-from django.urls import reverse
 
 from opensearch.conf import settings
 
