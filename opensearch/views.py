@@ -21,10 +21,10 @@ def opensearch(request: HttpRequest) -> HttpResponse:
     """
     Render opensearch.xml.
 
-    :param request: django request instance.
-    :type request: django.http.request.HttpRequest.
+    :param request: django request instance
+    :type request: HttpRequest
     :return: rendered opensearch.xml
-    :rtype: django.http.HttpResponse.
+    :rtype: HttpResponse
     """
 
     context = {

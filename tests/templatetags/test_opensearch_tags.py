@@ -25,9 +25,6 @@ class OpensearchMetaTemplatetagTest(TestCase):
     def test_opensearch_meta__return(self) -> None:
         """
         Test templatetag returning value.
-
-        :return: nothing.
-        :rtype: None.
         """
 
         result = opensearch_meta()  # type: Dict[str, str]
@@ -41,9 +38,6 @@ class OpensearchMetaTemplatetagTest(TestCase):
     def test_opensearch_meta__render(self) -> None:
         """
         Test templatetag rendering result.
-
-        :return: nothing.
-        :rtype: None.
         """
 
         template = Template(
@@ -58,9 +52,6 @@ class OpensearchMetaTemplatetagTest(TestCase):
     def test_opensearch_meta__render__without_description(self) -> None:
         """
         Test templatetag rendering result without description.
-
-        :return: nothing.
-        :rtype: None.
         """
 
         template = Template(
