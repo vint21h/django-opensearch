@@ -4,9 +4,9 @@
 # tests/settings.py
 
 
-import pathlib
-import random
 import sys
+import random
+import pathlib
 from typing import Dict, List, Union  # pylint: disable=W0611
 
 
@@ -26,10 +26,7 @@ ALLOWED_HOSTS = ["example.com"]  # type: List[str]
 
 # configure databases
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": "django-opensearch-tests.sqlite3",
-    }
+    "default": {"ENGINE": "django.db.backends.sqlite3", "NAME": ":memory:"}
 }  # type: Dict[str, Dict[str, str]]
 
 # configure templates

@@ -6,10 +6,10 @@
 
 from typing import Dict, List, Union  # pylint: disable=W0611
 
+from django.urls import reverse
+from django.shortcuts import render
 from django.http import HttpResponse
 from django.http.request import HttpRequest
-from django.shortcuts import render
-from django.urls import reverse
 
 from opensearch.conf import settings
 
@@ -21,10 +21,10 @@ def opensearch(request: HttpRequest) -> HttpResponse:
     """
     Render opensearch.xml.
 
-    :param request: django request instance.
-    :type request: django.http.request.HttpRequest.
+    :param request: django request instance
+    :type request: HttpRequest
     :return: rendered opensearch.xml
-    :rtype: django.http.HttpResponse.
+    :rtype: HttpResponse
     """
 
     context = {

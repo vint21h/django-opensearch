@@ -6,14 +6,14 @@
 
 from typing import List, Union  # pylint: disable=W0611
 
-from django.conf.urls import url, include
-from django.http import HttpRequest, HttpResponse
-from django.test import TestCase
-from django.test.utils import override_settings
 from django.urls import reverse
+from django.test import TestCase
+from django.utils import translation
+from django.conf.urls import url, include
+from django.test.utils import override_settings
+from django.http import HttpRequest, HttpResponse
 from django.urls.exceptions import NoReverseMatch
 from django.urls.resolvers import URLPattern, URLResolver  # pylint: disable=W0611
-from django.utils import translation
 
 from opensearch.views import opensearch
 
@@ -25,10 +25,10 @@ def search(request: HttpRequest) -> HttpResponse:
     """
     Fake search view.
 
-    :param request: django request instance.
-    :type request: django.http.request.HttpRequest.
+    :param request: django request instance
+    :type request: HttpRequest
     :return: rendered opensearch.xml
-    :rtype: django.http.HttpResponse.
+    :rtype: HttpResponse
     """
 
     return HttpResponse()
@@ -49,9 +49,6 @@ class OpensearchViewTest(TestCase):
     def test_humans_txt__return_response(self) -> None:
         """
         Test view returning response.
-
-        :return: nothing.
-        :rtype: None.
         """
 
         request = HttpRequest()  # type: HttpRequest
@@ -61,10 +58,7 @@ class OpensearchViewTest(TestCase):
 
     def test_opensearch__render__template_used(self) -> None:
         """
-        Test view right template usage .
-
-        :return: nothing.
-        :rtype: None.
+        Test view right template usage.
         """
 
         with translation.override("en"):
@@ -77,9 +71,6 @@ class OpensearchViewTest(TestCase):
     def test_opensearch__render(self) -> None:
         """
         Test view rendering result.
-
-        :return: nothing.
-        :rtype: None.
         """
 
         expected = """
@@ -101,9 +92,6 @@ class OpensearchViewTest(TestCase):
     def test_opensearch__render__without_email(self) -> None:
         """
         Test view rendering result without contact email.
-
-        :return: nothing.
-        :rtype: None.
         """
 
         expected = """
@@ -130,9 +118,6 @@ class OpensearchViewTest(TestCase):
     def test_opensearch__render__without_name(self) -> None:
         """
         Test view rendering result without short name.
-
-        :return: nothing.
-        :rtype: None.
         """
 
         expected = """
@@ -159,9 +144,6 @@ class OpensearchViewTest(TestCase):
     def test_opensearch__render__without_description(self) -> None:
         """
         Test view rendering result without description.
-
-        :return: nothing.
-        :rtype: None.
         """
 
         expected = """
@@ -193,9 +175,6 @@ class OpensearchViewTest(TestCase):
     def test_opensearch__render__without_favicon(self) -> None:
         """
         Test view rendering result without favicon.
-
-        :return: nothing.
-        :rtype: None.
         """
 
         expected = """
@@ -241,9 +220,6 @@ class OpensearchViewTest(TestCase):
         """
         Test view rendering result without url.
         Must raise no reverse match error for empty URL name.
-
-        :return: nothing.
-        :rtype: None.
         """
 
         with translation.override("en"):
@@ -254,9 +230,6 @@ class OpensearchViewTest(TestCase):
     def test_opensearch__render__without_encoding(self) -> None:
         """
         Test view rendering result without input encoding.
-
-        :return: nothing.
-        :rtype: None.
         """
 
         expected = """
