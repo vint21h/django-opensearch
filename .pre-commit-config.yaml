@@ -53,7 +53,7 @@ repos:
       name: bandit
       stages: [commit]
       language: system
-      entry: pipenv run bandit -r opensearch tests --ini=.bandit
+      entry: pipenv run bandit -r opensearch tests --ini=setup.cfg
       types: [python]
       pass_filenames: false
     - id: dodgy
@@ -69,6 +69,27 @@ repos:
       language: system
       entry: pipenv run darglint
       types: [python]
+    - id: polint
+      name: polint
+      stages: [commit]
+      language: system
+      entry: pipenv run polint --ignore=location,unsorted --show-msg
+      types: [pofile]
+      pass_filenames: true
+    - id: dennis
+      name: dennis
+      stages: [commit]
+      language: system
+      entry: pipenv run dennis-cmd lint
+      types: [pofile]
+      pass_filenames: true
+    - id: curlylint
+      name: curlylint
+      stages: [commit]
+      language: system
+      entry: pipenv run curlylint
+      types: [html,xml]
+      pass_filenames: true
     - id: mypy
       name: mypy
       stages: [commit]
@@ -82,13 +103,19 @@ repos:
       language: system
       pass_filenames: false
       entry: pipenv run check-manifest
-      types: [python]
     - id: pyroma
       name: pyroma
       stages: [commit]
       language: system
       pass_filenames: false
       entry: pipenv run pyroma -d .
+      types: [python]
+    - id: check-wheel-contents
+      name: check-wheel-contents
+      stages: [commit]
+      language: system
+      pass_filenames: false
+      entry: bash -c 'make build -B && pipenv run check-wheel-contents dist'
       types: [python]
 -   repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v3.2.0
@@ -103,3 +130,7 @@ repos:
       - id: check-executables-have-shebangs
       - id: check-merge-conflict
       - id: detect-private-key
+      - id: check-added-large-files
+      - id: check-ast
+      - id: check-symlinks
+      - id: forbid-new-submodules
