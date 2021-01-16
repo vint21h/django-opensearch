@@ -6,10 +6,10 @@
 
 from typing import List, Union  # pylint: disable=W0611
 
-from django.urls import reverse
 from django.test import TestCase
 from django.utils import translation
-from django.conf.urls import url, include
+from django.shortcuts import resolve_url
+from django.urls import include, re_path
 from django.test.utils import override_settings
 from django.http import HttpRequest, HttpResponse
 from django.urls.exceptions import NoReverseMatch
@@ -35,9 +35,9 @@ def search(request: HttpRequest) -> HttpResponse:
 
 
 urlpatterns = [
-    url(r"^search$", search, name="search")  # fake search view
+    re_path(r"^search$", search, name="search")  # fake search view
 ]  # type: List[Union[URLPattern, URLResolver]]
-urlpatterns += [url(r"^opensearch/", include("opensearch.urls"))]
+urlpatterns += [re_path(r"^opensearch/", include("opensearch.urls"))]
 
 
 @override_settings(ROOT_URLCONF="tests.test_views")
@@ -62,7 +62,9 @@ class OpensearchViewTest(TestCase):
         """
 
         with translation.override("en"):
-            result = self.client.get(path=reverse("opensearch"))  # type: HttpResponse
+            result = self.client.get(
+                path=resolve_url(to="opensearch")
+            )  # type: HttpResponse
 
         self.assertTemplateUsed(
             response=result, template_name="opensearch/opensearch.xml"
@@ -84,7 +86,9 @@ class OpensearchViewTest(TestCase):
         </OpenSearchDescription>
         """  # type: str
         with translation.override("en"):
-            result = self.client.get(path=reverse("opensearch"))  # type: HttpResponse
+            result = self.client.get(
+                path=resolve_url(to="opensearch")
+            )  # type: HttpResponse
 
         self.assertXMLEqual(xml1=result.content.decode(), xml2=expected)
 
@@ -104,7 +108,9 @@ class OpensearchViewTest(TestCase):
         </OpenSearchDescription>
         """  # type: str
         with translation.override("en"):
-            result = self.client.get(path=reverse("opensearch"))  # type: HttpResponse
+            result = self.client.get(
+                path=resolve_url(to="opensearch")
+            )  # type: HttpResponse
 
         self.assertEqual(
             first=result.context.get("OPENSEARCH_CONTACT_EMAIL")
@@ -130,7 +136,9 @@ class OpensearchViewTest(TestCase):
         </OpenSearchDescription>
         """  # type: str
         with translation.override("en"):
-            result = self.client.get(path=reverse("opensearch"))  # type: HttpResponse
+            result = self.client.get(
+                path=resolve_url(to="opensearch")
+            )  # type: HttpResponse
 
         self.assertEqual(
             first=result.context.get("OPENSEARCH_SHORT_NAME")
@@ -156,7 +164,9 @@ class OpensearchViewTest(TestCase):
         </OpenSearchDescription>
         """  # type: str
         with translation.override("en"):
-            result = self.client.get(path=reverse("opensearch"))  # type: HttpResponse
+            result = self.client.get(
+                path=resolve_url(to="opensearch")
+            )  # type: HttpResponse
 
         self.assertEqual(
             first=result.context.get("OPENSEARCH_DESCRIPTION")
@@ -187,7 +197,9 @@ class OpensearchViewTest(TestCase):
         </OpenSearchDescription>
         """  # type: str
         with translation.override("en"):
-            result = self.client.get(path=reverse("opensearch"))  # type: HttpResponse
+            result = self.client.get(
+                path=resolve_url(to="opensearch")
+            )  # type: HttpResponse
 
         self.assertEqual(
             first=result.context.get("OPENSEARCH_FAVICON_WIDTH")
@@ -224,7 +236,7 @@ class OpensearchViewTest(TestCase):
 
         with translation.override("en"):
             with self.assertRaises(expected_exception=NoReverseMatch):
-                self.client.get(path=reverse("opensearch"))
+                self.client.get(path=resolve_url(to="opensearch"))
 
     @override_settings(OPENSEARCH_INPUT_ENCODING="")
     def test_opensearch__render__without_encoding(self) -> None:
@@ -243,7 +255,9 @@ class OpensearchViewTest(TestCase):
         """  # type: str
 
         with translation.override("en"):
-            result = self.client.get(path=reverse("opensearch"))  # type: HttpResponse
+            result = self.client.get(
+                path=resolve_url(to="opensearch")
+            )  # type: HttpResponse
 
         self.assertEqual(
             first=result.context.get("OPENSEARCH_INPUT_ENCODING")

@@ -5,7 +5,7 @@
 A django-opensearch documentation
 =================================
 
-|Travis|_ |Coveralls|_ |Requires|_ |pypi-license|_ |pypi-version|_ |pypi-python-version|_ |pypi-django-version|_ |pypi-format|_ |pypi-wheel|_ |pypi-status|_
+|GitHub|_ |Coveralls|_ |Requires|_ |pypi-license|_ |pypi-version|_ |pypi-python-version|_ |pypi-django-version|_ |pypi-format|_ |pypi-wheel|_ |pypi-status|_
 
     *django-opensearch is a Django reusable application to handle opensearch.xml*
 
@@ -34,11 +34,11 @@ Configuration
 
     # urls.py
 
-    from django.conf.urls import url
+    from django.urls import re_path
 
 
     urlpatterns += [
-        url(r"^opensearch/", include("opensearch.urls")),
+        re_path(r"^opensearch/", include("opensearch.urls")),
     ]
 
 Usage
@@ -100,8 +100,8 @@ Contacts
 
 For other authors list see AUTHORS file.
 
-.. |Travis| image:: https://travis-ci.com/vint21h/django-opensearch.svg?branch=master
-    :alt: Travis
+.. |GitHub| image:: https://github.com/vint21h/django-opensearch/workflows/build/badge.svg
+    :alt: GitHub
 .. |Coveralls| image:: https://coveralls.io/repos/github/vint21h/django-opensearch/badge.svg?branch=master
     :alt: Coverage
 .. |Requires| image:: https://requires.io/github/vint21h/django-opensearch/requirements.svg?branch=master
@@ -120,7 +120,7 @@ For other authors list see AUTHORS file.
     :alt: Python wheel support
 .. |pypi-status| image:: https://img.shields.io/pypi/status/django-opensearch
     :alt: Package status
-.. _Travis: https://travis-ci.com/vint21h/django-opensearch/
+.. _GitHub: https://github.com/vint21h/django-opensearch/actions/
 .. _Coveralls: https://coveralls.io/github/vint21h/django-opensearch?branch=master
 .. _Requires: https://requires.io/github/vint21h/django-opensearch/requirements/?branch=master
 .. _pypi-license: https://pypi.org/project/django-opensearch/

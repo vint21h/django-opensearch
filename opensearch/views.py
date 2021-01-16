@@ -6,10 +6,9 @@
 
 from typing import Dict, List, Union  # pylint: disable=W0611
 
-from django.urls import reverse
-from django.shortcuts import render
 from django.http import HttpResponse
 from django.http.request import HttpRequest
+from django.shortcuts import render, resolve_url
 
 from opensearch.conf import settings
 
@@ -38,7 +37,7 @@ def opensearch(request: HttpRequest) -> HttpResponse:
         "OPENSEARCH_URL": "{url}?{querystring}{{searchTerms}}".format(
             **{
                 "url": request.build_absolute_uri(
-                    reverse(settings.OPENSEARCH_SEARCH_URL)
+                    resolve_url(to=settings.OPENSEARCH_SEARCH_URL)
                 ),
                 "querystring": settings.OPENSEARCH_SEARCH_QUERYSTRING,
             }
