@@ -2,7 +2,6 @@
 # MANIFEST.in
 
 
-prune .github*
 prune tests*
 recursive-include opensearch *.po
 recursive-include opensearch *.mo
