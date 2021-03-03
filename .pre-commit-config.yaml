@@ -36,6 +36,13 @@ repos:
       language: system
       entry: pipenv run flake8
       types: [python]
+    - id: yesqa
+      name: yesqa
+      stages: [commit]
+      language: system
+      pass_filenames: false
+      entry: pipenv run yesqa
+      types: [python]
     - id: interrogate
       name: interrogate
       stages: [commit]
