@@ -5,54 +5,56 @@
 
 
 import sys
-import random
 import pathlib
-from typing import Dict, List, Union  # pylint: disable=W0611
+from random import SystemRandom
+from typing import Dict, List, Union
 
 
 # black magic to use imports from library code
-sys.path.insert(0, str(pathlib.Path(__file__).absolute().parent.parent.parent))
+path = pathlib.Path(__file__).absolute()
+project = path.parent.parent.parent
+sys.path.insert(0, str(project))
 
 # secret key
-SECRET_KEY = "".join(
+SECRET_KEY: str = "".join(
     [
-        random.choice("abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)")  # nosec
+        SystemRandom().choice("abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)")
         for i in range(50)
     ]
-)  # type: str
+)
 
 # security settings
-ALLOWED_HOSTS = ["example.com"]  # type: List[str]
+ALLOWED_HOSTS: List[str] = ["example.com"]
 
 # configure databases
-DATABASES = {
+DATABASES: Dict[str, Dict[str, str]] = {
     "default": {"ENGINE": "django.db.backends.sqlite3", "NAME": ":memory:"}
-}  # type: Dict[str, Dict[str, str]]
+}
 
 # configure templates
-TEMPLATES = [
+TEMPLATES: List[Dict[str, Union[str, List[str], bool, Dict[str, str]]]] = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [],
         "APP_DIRS": True,
         "OPTIONS": {},
     }
-]  # type: List[Dict[str, Union[str, List[str], bool, Dict[str, str]]]]
+]
 
 
-INSTALLED_APPS = ["opensearch"]  # type: List[str]
+INSTALLED_APPS: List[str] = ["opensearch"]
 
 # configure urls
-ROOT_URLCONF = "opensearch.urls"  # type: str
+ROOT_URLCONF: str = "opensearch.urls"
 
 # opensearch settings
-OPENSEARCH_CONTACT_EMAIL = "test@example.com"  # type: str
-OPENSEARCH_SHORT_NAME = "opensearch"  # type: str
-OPENSEARCH_DESCRIPTION = "Search engine human-readable text description"  # type: str
-OPENSEARCH_FAVICON_WIDTH = 16  # type: int
-OPENSEARCH_FAVICON_HEIGHT = 16  # type: int
-OPENSEARCH_FAVICON_TYPE = "image/x-icon"  # type str
-OPENSEARCH_FAVICON_FILE = "favicon.ico"  # type: str
-OPENSEARCH_SEARCH_URL = "search"  # type: str
-OPENSEARCH_SEARCH_QUERYSTRING = "q="  # type: str
-OPENSEARCH_INPUT_ENCODING = "UTF-8"  # type: str
+OPENSEARCH_CONTACT_EMAIL: str = "test@example.com"
+OPENSEARCH_SHORT_NAME: str = "opensearch"
+OPENSEARCH_DESCRIPTION: str = "Search engine human-readable text description"
+OPENSEARCH_FAVICON_WIDTH: int = 16
+OPENSEARCH_FAVICON_HEIGHT: int = 16
+OPENSEARCH_FAVICON_TYPE: str = "image/x-icon"
+OPENSEARCH_FAVICON_FILE: str = "favicon.ico"
+OPENSEARCH_SEARCH_URL: str = "search"
+OPENSEARCH_SEARCH_QUERYSTRING: str = "q="
+OPENSEARCH_INPUT_ENCODING: str = "UTF-8"

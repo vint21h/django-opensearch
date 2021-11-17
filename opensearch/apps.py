@@ -4,19 +4,17 @@
 # opensearch/apps.py
 
 
-from typing import List  # pylint: disable=W0611
+from typing import List
 
 from django.apps import AppConfig
 from django.utils.translation import gettext_lazy as _
 
 
-__all__ = ["DjangoOpensearchConfig"]  # type: List[str]
+__all__: List[str] = ["DjangoOpensearchConfig"]
 
 
 class DjangoOpensearchConfig(AppConfig):
-    """
-    Django opensearch.xml config.
-    """
+    """Django opensearch.xml config."""
 
-    name = "opensearch"  # type: str
-    verbose_name = _("Django opensearch.xml")  # type: str
+    name: str = "opensearch"
+    verbose_name: str = _("Django opensearch.xml")

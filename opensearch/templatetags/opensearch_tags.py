@@ -4,14 +4,14 @@
 # opensearch/templatetags/opensearch_tags.py
 
 
-from typing import Dict, List  # pylint: disable=W0611
+from typing import Dict, List
 
 from django import template
 
 from opensearch.conf import settings
 
 
-__all__ = ["opensearch_meta"]  # type: List[str]
+__all__: List[str] = ["opensearch_meta"]
 
 
 register = template.Library()
@@ -25,5 +25,4 @@ def opensearch_meta() -> Dict[str, str]:
     :return: opensearch description
     :rtype: Dict[str, str]
     """
-
     return {"OPENSEARCH_DESCRIPTION": settings.OPENSEARCH_DESCRIPTION}

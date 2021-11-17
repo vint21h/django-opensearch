@@ -87,6 +87,50 @@ Settings
 ``OPENSEARCH_INPUT_ENCODING``
     Contains a string that indicates that the search engine supports search requests encoded with the specified character encoding. Defaults to ``"UTF-8"``.
 
+Contributing
+------------
+1. `Fork it <https://github.com/vint21h/django-opensearch/>`_
+2. Install `GNU Make <https://www.gnu.org/software/make/>`_
+3. Install and configure `pyenv <https://github.com/pyenv/pyenv/>`_ and `pyenv-virtualenv plugin <https://github.com/pyenv/pyenv-virtualenv/>`_
+4. Install and configure `direnv <https://github.com/direnv/direnv/>`_
+5. Create environment config from example
+
+.. code-block:: bash
+
+    cp .env.example .env
+
+6. Install development dependencies:
+
+.. code-block:: bash
+
+    make install
+
+7. Create your fix/feature branch:
+
+.. code-block:: bash
+
+    git checkout -b my-new-fix-or-feature
+
+8. Check code style and moreover:
+
+.. code-block:: bash
+
+    make check
+
+9. Run tests:
+
+.. code-block:: bash
+
+    make test
+
+10. Push to the branch:
+
+.. code-block:: bash
+
+    git push origin my-new-fix-or-feature
+
+11. `Create a new Pull Request <https://github.com/vint21h/django-opensearch/compare/>`_
+
 Licensing
 ---------
 django-opensearch is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.

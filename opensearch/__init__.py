@@ -7,7 +7,7 @@
 from typing import List
 
 
-__all__ = ["default_app_config"]  # type: List[str]
+__all__: List[str] = ["default_app_config"]
 
 
-default_app_config = "opensearch.apps.DjangoOpensearchConfig"  # type: str
+default_app_config: str = "opensearch.apps.DjangoOpensearchConfig"
