@@ -33,7 +33,10 @@ class OpensearchMetaTemplatetagTest(TestCase):
     def test_opensearch_meta__render(self) -> None:
         """Test templatetag rendering result."""
         template: Template = Template(
-            "{% load opensearch_tags %}" "{% opensearch_meta %}"  # noqa: FS003
+            """
+            {% load opensearch_tags %}
+            {% opensearch_meta %}
+            """
         )
         result: str = template.render(context=Context())
         expected: str = '<link rel="search" type="application/opensearchdescription+xml" title="Search engine human-readable text description" href="/opensearch.xml" />'  # noqa: E501
@@ -44,7 +47,10 @@ class OpensearchMetaTemplatetagTest(TestCase):
     def test_opensearch_meta__render__without_description(self) -> None:
         """Test templatetag rendering result without description."""
         template: Template = Template(
-            "{% load opensearch_tags %}" "{% opensearch_meta %}"  # noqa: FS003
+            """
+            {% load opensearch_tags %}
+            {% opensearch_meta %}
+            """
         )
         result: str = template.render(context=Context())
         expected: str = ""
