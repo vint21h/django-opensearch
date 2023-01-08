@@ -50,7 +50,9 @@ def opensearch(request: HttpRequest) -> HttpResponse:
                 "querystring": settings.OPENSEARCH_SEARCH_QUERYSTRING_SUGGEST,
             }
         ),
-        "OPENSEARCH_MOZ_FORM": settings.OPENSEARCH_MOZ_FORM,
+        "OPENSEARCH_MOZ_FORM": request.build_absolute_uri(
+              resolve_url(to=settings.OPENSEARCH_MOZ_FORM)
+         ),
     }
 
     return render(
