@@ -87,6 +87,15 @@ Settings
 ``OPENSEARCH_INPUT_ENCODING``
     Contains a string that indicates that the search engine supports search requests encoded with the specified character encoding. Defaults to ``"UTF-8"``.
 
+``OPENSEARCH_SEARCH_URL_SUGGEST``
+    Contains a Django URL name to search suggestions. Defaults to ``"search"``.
+
+``OPENSEARCH_SEARCH_QUERYSTRING``
+    Contains the querystring to prepend to search suggestions parameter. Defaults to ``"q="``.
+
+``OPENSEARCH_MOZ_FORM``
+    Contains a Django url to search form. Defaults is not set.
+
 Contributing
 ------------
 1. `Fork it <https://github.com/vint21h/django-opensearch/>`_

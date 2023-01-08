@@ -26,6 +26,9 @@ class DjangoOpensearchAppConf(AppConf):
     SEARCH_URL: str = getattr(settings, "OPENSEARCH_SEARCH_URL", "search")
     SEARCH_QUERYSTRING: str = getattr(settings, "OPENSEARCH_SEARCH_QUERYSTRING", "q=")
     INPUT_ENCODING: str = getattr(settings, "OPENSEARCH_INPUT_ENCODING", "UTF-8")
+    SEARCH_URL_SUGGEST: str = getattr(settings, "OPENSEARCH_SEARCH_URL", "search")
+    SEARCH_QUERYSTRING_SUGGEST: str = getattr(settings, "OPENSEARCH_SEARCH_QUERYSTRING", "q=")
+    MOZ_FORM: str = getattr(settings, "OPENSEARCH_MOZ_FORM", "")
 
     class Meta:
         """Config settings."""

@@ -5,5 +5,7 @@
     {% block description %}{% if OPENSEARCH_DESCRIPTION %}<Description>{% trans OPENSEARCH_DESCRIPTION %}</Description>{% endif %}{% endblock %}
     {% block image %}{% if OPENSEARCH_FAVICON_WIDTH and OPENSEARCH_FAVICON_HEIGHT and OPENSEARCH_FAVICON_TYPE and OPENSEARCH_FAVICON_FILE %}<Image width="{{ OPENSEARCH_FAVICON_WIDTH }}" height="{{ OPENSEARCH_FAVICON_HEIGHT }}" type="{{ OPENSEARCH_FAVICON_TYPE }}">{% static OPENSEARCH_FAVICON_FILE %}</Image>{% endif %}{% endblock %}
     {% block url %}{% if OPENSEARCH_URL %}<Url type="text/html" template="{{ OPENSEARCH_URL }}"/>{% endif %}{% endblock %}
+    {% block url_suggest %}{% if OPENSEARCH_URL_SUGGEST %}<Url type="application/x-suggestions+json" template="{{ OPENSEARCH_URL_SUGGEST }}"/>{% endif %}{% endblock %}
+    {% block moz-form %}{% if OPENSEARCH_MOZ_FORM %}<moz:SearchForm>{{ OPENSEARCH_MOZ_FORM }}</moz:SearchForm>{% endif %}{% endblock %}
     {% block input-encoding %}{% if OPENSEARCH_INPUT_ENCODING %}<InputEncoding>{{ OPENSEARCH_INPUT_ENCODING }}</InputEncoding>{% endif %}{% endblock %}
 </OpenSearchDescription>

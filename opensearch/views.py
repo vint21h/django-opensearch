@@ -42,6 +42,17 @@ def opensearch(request: HttpRequest) -> HttpResponse:
             }
         ),
         "OPENSEARCH_INPUT_ENCODING": settings.OPENSEARCH_INPUT_ENCODING.upper(),
+        "OPENSEARCH_URL_SUGGEST": "{url}?{querystring}{{searchTerms}}".format(
+            **{
+                "url": request.build_absolute_uri(
+                    resolve_url(to=settings.OPENSEARCH_SEARCH_URL_SUGGEST)
+                ),
+                "querystring": settings.OPENSEARCH_SEARCH_QUERYSTRING_SUGGEST,
+            }
+        ),
+        "OPENSEARCH_MOZ_FORM": request.build_absolute_uri(
+              resolve_url(to=settings.OPENSEARCH_MOZ_FORM)
+         ),
     }
 
     return render(
